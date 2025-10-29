@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<!-- Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Youth Science Journal of Iraq</title>
+<style>
+    /* ===== Colors ===== */
+    :root {
+        --bg-color: #0A0A1A; /* dark background */
+        --text-color: #FFFFFF;
+        --accent-color: #00FFFF; /* electric blue highlight */
+        --accent-color1: #BF00FF; /* electric purple highlight */
+        --accent-red: #FF0055; /* electric red */
+        --accent-purple: #9900CC; /* electric purple */
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    button {
+        cursor: pointer;
+        padding: 10px 22px;
+        background-color: var(--accent-blue, var(--accent-color));
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    button:hover {
+        background-color: var(--accent-red);
+        transform: translateY(-3px);
+    }
+
+    /* ===== Banner ===== */
+    header {
+        position: relative;
+        background: url('banner.jpg') center center / cover no-repeat;
+        text-align: center;
+        padding: 40px 20px;
+        color: #f5f5f5;
+        box-shadow: inset 0 0 100px #000;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.55); /* dull brightness */
+        z-index: 0;
+    }
+    header h1, header h2, header p { position: relative; z-index: 1; }
+
+    header h1 {
+        font-size: 3.8em;
+        margin-bottom: 15px;
+        text-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-purple);
+    }
+    header h2 {
+        font-size: 1.8em;
+        text-shadow: 0 0 5px var(--accent-red), 0 0 10px var(--accent-purple);
+    }
+    header p {
+        font-size: 1.4em;
+        text-shadow: 0 0 2px var(--accent-color), 0 0 8px var(--accent-purple);
+    }
+
+    /* ===== Intro Section ===== */
+    .intro {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 60px 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+        font-size: 1.3em;
+    }
+    .intro-card {
+        background: #1E1E3F;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        text-align: center;
+        transform: translateX(-100%);
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+    }
+    .intro-card span.highlight {
+        color: var(--accent-color);
+        text-align: center;
+        font-weight: bold;
+        animation: pulse 1.2s infinite alternate;
+    }
+    @keyframes pulse {
+        0% { text-shadow: 0 0 3px var(--accent-color); }
+        100% { text-shadow: 0 0 12px var(--accent-red); }
+    }
+    .animate-slide { animation: slideIn 0.8s forwards; }
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.9s; }
+    .delay-4 { animation-delay: 1.2s; }
+    .delay-5 { animation-delay: 1.5s; }
+    .delay-6 { animation-delay: 1.8s; }
+    .delay-7 { animation-delay: 2.1s; }
+
+    @keyframes slideIn {
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Icon containers */
+    .icon-left, .icon-right {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #2A2A4F;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,255,255,0.3);
+    }
+    .icon-left i, .icon-right i {
+        font-size: 24px;
+        color: var(--accent-color1);
+    }
+
+    /* ===== Issues Grid ===== */
+    .issues {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        padding: 50px 20px;
+    }
+    .issue-card {
+        background: #1E1E3F;
+        border-radius: 16px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .issue-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+    }
+    .issue-card h3 { margin-bottom: 18px; color: var(--accent-color); }
+    .issue-card button { margin: 7px; }
+
+    /* ===== Footer ===== */
+    footer {
+        background-color: #11101A;
+        color: #CCCCCC;
+        text-align: center;
+        padding: 40px 20px;
+        font-size: 0.95em;
+    }
+    footer a { color: var(--accent-color); }
+
+.ask-section {
+  background-color: #1E1E3F;
+  display: flex; /* switch from grid to flex for easier centering */
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+}
+
+.ask-container {
+  width: 100%;
+  max-width: 350px; /* controls box width */
+  text-align: center;
+  color: var(--text-color);
+  background-color: #1E1E3F;
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
+  padding: 30px;
+  border-radius: 15px;
+  margin: 0 auto; /* centers each box */
+}
+
+
+.ask-container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  text-shadow: 0 0 5px var(--accent-purple);
+}
+
+.ask-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ask-container li {
+  margin-bottom: 15px;
+}
+
+.ask-container a {
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.ask-container a:hover {
+  color: var(--accent-red);
+  text-shadow: 0 0 8px var(--accent-red);
+}
+
+.monthly-questions {
+  background-color: #000435;
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 60px; /* creates space below each section */
+
+}
+ 
+
+/* Logo on top-left of banner, not affected by overlay */
+header .site-logo {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  z-index: 2;               /* higher than header::before which is z-index:0 */
+  display: block;
+  text-decoration: none;
+}
+
+/* logo image sizing and behavior */
+header .site-logo img {
+  display: block;
+  height: 225px;             /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+  pointer-events: auto;
+  filter: none;             /* explicitly ensure no css filters are applied */
+}
+
+/* responsive: smaller logo on narrow screens */
+@media (max-width: 520px) {
+  header .site-logo {
+    left: 12px;
+    top: 12px;
+  }
+  header .site-logo img {
+    height: 48px;
+  }
+}
+
+.monthly-questions h2 {
+  font-size: 2.5em;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px var(--accent-purple);
+}
+
+.question-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.question-item {
+  font-size: 1.3em;
+  margin: 15px 0;
+  color: var(--text-color);
+  background: #1E1E3F;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,255,255,0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 0.8s forwards;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+.delay-4 { animation-delay: 1.2s; }
+.delay-5 { animation-delay: 1.5s; }
+
+
+</style>
+
+</head>
+<header>
+  <a href="index.html" class="site-logo" aria-label="YSJOI Home">
+  <img src="logo.png" alt="YSJOI logo" />
+  </a>
+  <h1>The Youth Science Journal of Iraq</h1>
+  <h2>The First Iraqi Science Journal for Iraqi Youth!</h2>
+  <p>Learn the answers to your questions, and teach us what you know!</p>
+</header>
+
+
+
+<!-- ===== VISITOR COUNTER POPUP (cleaned, single instance) ===== -->
+<div id="visitor-popup" aria-live="polite" style="
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  width: 360px;
+  max-width: calc(100vw - 40px);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 300ms ease, opacity 300ms ease;
+  font-family: 'Poppins', sans-serif;
+">
+  <div style="
+    background: linear-gradient(135deg, rgba(20,20,50,0.98), rgba(40,10,60,0.95));
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+  ">
+    <!-- header row -->
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; background: linear-gradient(90deg, rgba(162,0,255,0.06), rgba(0,191,255,0.03));">
+      <div style="display:flex; gap:12px; align-items:center;">
+        <div style="width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:#0f1330; box-shadow: inset 0 0 12px rgba(162,0,255,0.06);">
+          <i class="fas fa-eye" style="color: #a200ff; font-size:18px;"></i>
+        </div>
+        <div>
+          <div style="font-family:'Orbitron',sans-serif; color:#a200ff; font-size:0.95rem; line-height:1;">Site Visitors</div>
+          <div style="font-size:0.78rem; color:#d7d7ee; margin-top:2px;">Total page hits</div>
+        </div>
+      </div>
+
+      <!-- close button -->
+      <button id="visitor-popup-close" aria-label="Close visitor popup" style="
+        background: transparent;
+        border: none;
+        color: #d7d7ee;
+        font-size: 20px;
+        padding: 6px 8px;
+        border-radius: 8px;
+        cursor: pointer;
+      ">&times;</button>
+    </div>
+
+    <!-- content -->
+    <div style="padding:20px 18px 24px 18px; display:flex; flex-direction:column; align-items:center; gap:8px;">
+      <div id="visitor-count" style="font-family:'Orbitron',sans-serif; color:#a200ff; font-size:2.2rem; font-weight:700;">—</div>
+      <div style="font-size:0.92rem; color:#bdbde6; text-align:center; max-width:300px;">
+        Thanks for visiting YSJOI — every visit helps the project grow.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    // Elements
+    const popup = document.getElementById('visitor-popup');
+    const countEl = document.getElementById('visitor-count');
+    const closeBtn = document.getElementById('visitor-popup-close');
+
+    // Show/hide helpers
+    function showPopup() {
+      requestAnimationFrame(() => {
+        popup.style.transform = 'translateY(0)';
+        popup.style.opacity = '1';
+      });
+    }
+    function hidePopup() {
+      popup.style.transform = 'translateY(20px)';
+      popup.style.opacity = '0';
+    }
+
+    // Show on load (short delay so it feels natural)
+    setTimeout(showPopup, 600);
+
+    // Close button — hide only for this view (no persistence)
+    if (closeBtn) {
+      closeBtn.addEventListener('click', hidePopup);
+    }
+
+    // CountAPI: increments and returns the value
+    (function fetchCount(){
+      const namespace = 'ysjoi-counter';
+      const key = 'visitors';
+      const url = 'https://api.countapi.xyz/hit/' + encodeURIComponent(namespace) + '/' + encodeURIComponent(key);
+
+      fetch(url)
+        .then(res => {
+          if (!res.ok) throw new Error('Network response not ok');
+          return res.json();
+        })
+        .then(data => {
+          if (data && typeof data.value !== 'undefined') {
+            countEl.textContent = data.value.toLocaleString();
+          } else {
+            countEl.textContent = '0';
+          }
+        })
+        .catch(err => {
+          console.warn('CountAPI error', err);
+          countEl.textContent = '—';
+        });
+    })();
+  })();
+</script>
+<section class="intro">
+  <!-- Line 1 -->
+  <div class="intro-card animate-slide">
+    <div class="icon-left"><i class="fas fa-glasses" ></i></div>
+    <p>Welcome, <span class="highlight">scientists of the future</span>! Get ready for a journey like no other.</p>
+    <div class="icon-right"><i class="fas fa-flask"></i></div>
+  </div>
+
+  <!-- Line 2 (no icons) -->
+  <div class="intro-card animate-slide delay-1" style="justify-content: center;">
+    <p>For the youth of Iraq — to <span class="highlight">learn</span> and <span class="highlight">teach</span> — we bring you the Youth Science Journal of Iraq (YSJOI)!</p>
+  </div>
+
+  <!-- Line 3 -->
+  <div class="intro-card animate-slide delay-2">
+    <div class="icon-left"><i class="fas fa-desktop"></i></div>
+    <p>For the very first time in Iraq, where opportunities in <span class="highlight">STEM</span> have long been limited, we open the doors for young minds to explore.</p>
+    <div class="icon-right"><i class="fas fa-calculator"></i></div>
+  </div>
+
+  <!-- Line 4 -->
+  <div class="intro-card animate-slide delay-3">
+    <div class="icon-left"><i class="fas fa-brain"></i></div>
+    <p>Your <span class="highlight">field</span>, your <span class="highlight">dream</span>, your <span class="highlight">choice</span>; we all learn differently, so choose your path:</p>
+    <div class="icon-right"><i class="fas fa-comment-dots"></i></div>
+  </div>
+
+  <!-- Line 5 -->
+  <div class="intro-card animate-slide delay-4" style="justify-content: center;">
+    <p>Ask the questions that spark your curiosity, and get your answers in the next issue of the YSJOI; or choose a question to explore and have your <span class="highlight">article featured</span>!</p>
+  </div>
+
+  <!-- Line 6 -->
+  <div class="intro-card animate-slide delay-5" style="justify-content: center;">
+    <p>Read the monthly YSJOI and <span class="highlight">learn</span> with us all — whichever way you explore and create, <span class="highlight">you belong here</span>.</p>
+  </div>
+
+  <!-- Line 7 -->
+  <div class="intro-card animate-slide delay-6">
+    <div class="icon-left"><i class="fas fa-arrow-down"></i></div>
+    <div class="icon-left"><i class="fas fa-arrow-down"></i></div>
+ <p>Follow the links below, pick your path, and <span class="highlight">begin your journey</span> with YSJOI!</p>
+ <div class="icon-left"><i class="fas fa-arrow-down"></i></div>
+    <div class="icon-right"><i class="fas fa-arrow-down"></i></div>
+  </div>
+</section>
+
+<section class="monthly-questions">
+  <h2>November 2025 : Questions</h2>
+  <ul class="question-list">
+    <li class="question-item delay-1">🌌 What would happen if Earth stopped spinning?</li>
+    <li class="question-item delay-2">🧬 Can we edit genes to cure all diseases?</li>
+    <li class="question-item delay-3">🚀 How does sacrificial protection from rusting work?</li>
+    <li class="question-item delay-4">⚡ How did the dinosaurs go extinct?</li>
+    <li class="question-item delay-5">🧠 How does the brain work?</li>
+  </ul>
+</section>
+
+
+<section class="ask-section">
+  <div class="ask-container">
+    <h2>Ask a Question</h2>
+    <ul>
+      <li><a href="mailto:ysjoiofficial@gmail.com">Email Us</a></li>
+      <li><a href="https://docs.google.com/forms/..." target="_blank">Submit via Google Form</a></li>
+      <li><a href="https://instagram.com/satvik_m_bhure" target="_blank">Message on Instagram</a></li>
+    </ul>
+  </div>
+
+  <div class="ask-container">
+    <h2>Answer November's Questions</h2>
+    <ul>
+      <li><a href="mailto:ysjoiofficial@gmail.com">Email Us</a></li>
+    </ul>
+<p>(Make sure to attach your work as a Word file, with your name included!)</p>
+  </div>
+</section>
+
+
+
+
+<section id="issuesO">
+<section class="issues">
+  <div class="issue-card">
+
+
+<section class="issues">
+  <div class="issue-card">
+    <h3>Issue #1 – Oct 2025</h3>
+    <button onclick="window.location.href='read online 1.html'">Read Online</button>
+    <button onclick="window.location.href='YSJOi 1.pdf'">Download PDF</button>
+  </div>
+  <div class="issue-card">
+    <h3>Issue #2 – November 2025</h3>
+    <button onclick="window.location.href='#'">Coming soon</button>
+    <button onclick="window.location.href='#'">Coming soon</button>
+  </div>
+</section>
+</section>
+</section>
+
+<!-- ===== Credits + Visitor Counter (INSERT BETWEEN issues and footer) ===== -->
+<section id="credits-and-stats" style="padding:40px 20px; background: linear-gradient(180deg, rgba(10,10,26,0.6), rgba(18,10,36,0.6)); display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:flex-start;">
+  <!-- Credits Card 1 -->
+  <a href="credits.html" style="text-decoration:none; color:inherit;">
+    <div style="width:320px; max-width:92vw; background:linear-gradient(135deg, rgba(153,0,204,0.12), rgba(0,255,255,0.06)); border:1px solid rgba(255,255,255,0.04); padding:22px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.6); display:flex; gap:16px; align-items:center;">
+      <div style="width:64px;height:64px;border-radius:12px; display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.28); box-shadow: inset 0 0 12px rgba(155,0,255,0.12);">
+        <i class="fas fa-copyright" style="color:var(--accent-color1); font-size:24px;"></i>
+      </div>
+      <div style="flex:1;">
+        <div style="font-family: 'Orbitron', sans-serif; font-size:1.05rem; color:var(--accent-color1); margin-bottom:6px;">Solved Questions</div>
+        <div style="font-size:0.95rem; color:#d7d7ee;">All the questions we've solved so far! We aim to solve a variety every month.</div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Credits Card 2 -->
+  <a href="contributors.html" style="text-decoration:none; color:inherit;">
+    <div style="width:320px; max-width:92vw; background:linear-gradient(135deg, rgba(0,255,255,0.06), rgba(153,0,204,0.09)); border:1px solid rgba(255,255,255,0.04); padding:22px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.6); display:flex; gap:16px; align-items:center;">
+      <div style="width:64px;height:64px;border-radius:12px; display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.28); box-shadow: inset 0 0 12px rgba(0,255,255,0.12);">
+        <i class="fas fa-users" style="color:var(--accent-color); font-size:24px;"></i>
+      </div>
+      <div style="flex:1;">
+        <div style="font-family: 'Orbitron', sans-serif; font-size:1.05rem; color:var(--accent-color); margin-bottom:6px;">Contributors</div>
+        <div style="font-size:0.95rem; color:#d7d7ee;">Authors, question-askers, helpers and student contributors.</div>
+      </div>
+    </div>
+  </a>
+
+  </script>
+</section>
+<!-- ===== end credits & stats section ===== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+  <p>Contact us: <a href="mailto:ysjoiofficial@gmail.com">YSJOIofficial@gmail.com</a></p>
+  <p>© 2025 The Youth Science Journal of Iraq</p>
+  <p>© 2025 Satvik M. Bhure</p>
+</footer>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>YSJOI — Solved Questions</title>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+  :root{
+    --bg:#0A0A1A;
+    --panel:#1E1E3F;
+    --text:#FFFFFF;
+    --accent-b:#00FFFF;
+    --accent-p:#BF00FF;
+    --accent-r:#FF0055;
+  }
+
+/* Logo on top-left of banner, not affected by overlay */
+header .site-logo {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  z-index: 2;               /* higher than header::before which is z-index:0 */
+  display: block;
+  text-decoration: none;
+}
+
+/* logo image sizing and behavior */
+header .site-logo img {
+  display: block;
+  height: 128px;             /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+  pointer-events: auto;
+  filter: none;             /* explicitly ensure no css filters are applied */
+}
+
+/* responsive: smaller logo on narrow screens */
+@media (max-width: 520px) {
+  header .site-logo {
+    left: 12px;
+    top: 12px;
+  }
+  header .site-logo img {
+    height: 48px;
+  }
+}
+
+ .ysjoi .ys {
+  color: #ffffff;
+}
+
+.ysjoi .j {
+  color: #009DA2;
+}
+
+.ysjoi .oi {
+  color: #FD5B46;
+}
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  header{
+    position:relative;
+    background: url('banner.jpg') center center / cover no-repeat;
+    padding:36px 20px;
+    text-align:center;
+    box-shadow: inset 0 0 100px #000;
+    margin-bottom:20px;
+  }
+  header::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:0}
+  header h1, header p{position:relative;z-index:1;font-family:'Orbitron',sans-serif}
+  header h1{font-size:2.6rem;margin:0 0 6px;color:var(--accent-p);text-shadow:0 0 8px var(--accent-p)}
+  header p{margin:0;color:#e9e9ff;text-shadow:0 0 6px var(--accent-b)}
+  .container{max-width:1100px;margin:0 auto;padding:40px 20px}
+  .back {
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.04);
+    padding:10px 14px;
+    border-radius:12px;
+    color:#d7d7ee;
+    margin-bottom:18px;
+  }
+  .page-title{font-family:'Orbitron',sans-serif;color:var(--accent-b);font-size:1.6rem;margin:6px 0 18px}
+  /* grid of solved questions */
+  .qa-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .qa-card{
+    background:var(--panel);
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 8px 22px rgba(0,0,0,0.45);
+    border:1px solid rgba(255,255,255,0.03);
+  }
+  .qa-card h3{margin:0 0 8px;color:var(--accent-p);font-family:'Orbitron',sans-serif}
+  .meta{font-size:0.9rem;color:#cfcfe8;margin-bottom:10px}
+  .answer{color:#e8e8ff;line-height:1.5;font-size:0.98rem}
+  /* accordion toggle */
+  .short{display:block}
+  .full { display:none; margin-top:10px; color:#d6d6ff; }
+  .qa-actions{margin-top:12px;display:flex;gap:10px;align-items:center}
+  .btn-link{
+    padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
+    background:transparent;color:#d7d7ee;font-weight:600;font-size:0.9rem;
+  }
+  /* highlight block for curated "top" answers */
+  .featured{
+    background:linear-gradient(135deg, rgba(162,0,255,0.06), rgba(0,191,255,0.03));
+    border:1px solid rgba(255,255,255,0.04);
+    padding:14px;border-radius:12px;margin-bottom:20px;color:#eaf6ff;
+  }
+  footer{padding:36px 20px;text-align:center;background:#0e0e1a;color:#bfbfdc;margin-top:40px}
+  /* small responsive tweaks */
+  @media (max-width:520px){
+    header h1{font-size:1.8rem}
+    .container{padding:20px}
+  }
+</style>
+</head>
+<body>
+ <header>
+     <a href="index.html" class="site-logo" aria-label="YSJOI Home">
+  <img src="logo.png" alt="YSJOI logo" />
+  </a>
+  <h1>YSJOI — Solved Questions</h1>
+  <p>All the questions we've solved so far!</p>
+</header>
+
+<div class="container">
+  <a class="back" href="index.html"><i class="fas fa-arrow-left"></i> Back to home</a>
+
+  <div class="page-title">Each answer with its issue!</div>
+
+  <div class="qa-grid">
+    <!-- Q/A 1 -->
+    <article class="qa-card" id="q1">
+      <h3>Is Cancer Genetic?</h3>
+      <div class="meta">Category: Human Biology</div>
+      <div class="answer">
+        <div class="short">October 2025 question, Issue 1!</div>
+        <div class="qa-actions">
+          <a class="btn-link" href="index.html#issuesO">Related: Issue #1</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q/A 2 -->
+    <article class="qa-card" id="q2">
+      <h3>If time stops in a black hole, does that mean that the black hole is frozen in time?</h3>
+      <div class="meta">Category: Astrophysics</div>
+      <div class="answer">
+        <div class="short">October 2025 question, Issue 1!</div>
+        <div class="qa-actions">
+          <a class="btn-link" href="index.html#issuesO">Related: Issue #1</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q/A 3 -->
+    <article class="qa-card" id="q3">
+      <h3>Can humans change our own genes? Or add new ones?</h3>
+      <div class="meta">Category: Human Biology</div>
+      <div class="answer">
+        <div class="short">October 2025 question, Issue 1!</div>
+        <div class="qa-actions">
+          <a class="btn-link" href="index.html#issuesO">Related: Issue #1</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q/A 4 -->
+    <article class="qa-card" id="q4">
+      <h3>Why do we live near volcanoes even though they are so dangerous?</h3>
+      <div class="meta">Category: Geology</div>
+      <div class="answer">
+        <div class="short">October 2025 question, Issue 1!</div>
+        <div class="qa-actions">
+          <a class="btn-link" href="index.html#issuesO">Related: Issue #1</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Q/A 5 -->
+    <article class="qa-card" id="q5">
+      <h3>How does light pass through glass, which is solid?</h3>
+      <div class="meta">Category: Physics-Chemistry</div>
+      <div class="answer">
+        <div class="short">October 2025 question, Issue 1!</div>
+        <div class="qa-actions">
+          <a class="btn-link" href="index.html#issuesO">Related: Issue #1</a>
+        </div>
+      </div>
+    </article>
+  </div> <!-- end .qa-grid -->
+</div> <!-- end .container -->
+  <footer>
+    <p>Contact us: <a href="mailto:ysjoiofficial@gmail.com">YSJOIofficial@gmail.com</a></p>
+    <p>© 2025 The Youth Science Journal of Iraq</p>
+    <p>© 2025 Satvik M. Bhure</p>
+  </footer>
+
+<script>
+  // small toggle script for "Read more" buttons — unobtrusive
+  document.querySelectorAll('.btn-link[data-toggle]').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      const id = btn.getAttribute('data-toggle');
+      const article = document.getElementById(id);
+      if(!article) return;
+      const full = article.querySelector('.full');
+      const short = article.querySelector('.short');
+      if(!full || !short) return;
+      const isOpen = full.style.display === 'block';
+      if(isOpen){
+        full.style.display = 'none';
+        short.style.display = 'block';
+        btn.textContent = 'Read more';
+      } else {
+        full.style.display = 'block';
+        short.style.display = 'none';
+        btn.textContent = 'Show less';
+      }
+    });
+  });
+
+  // initialize so the short answer shows
+  document.querySelectorAll('.qa-card .full').forEach(f=> f.style.display='none');
+  document.querySelectorAll('.qa-card .short').forEach(s=> s.style.display='block');
+</script>
+</body>
+</html>

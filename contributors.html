@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>YSJOI — Contributors</title>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+  :root{
+    --bg:#0A0A1A;
+    --panel:#1E1E3F;
+    --text:#FFFFFF;
+    --accent-b:#00FFFF;
+    --accent-p:#BF00FF;
+  }
+
+/* Logo on top-left of banner, not affected by overlay */
+header .site-logo {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  z-index: 2;               /* higher than header::before which is z-index:0 */
+  display: block;
+  text-decoration: none;
+}
+
+/* logo image sizing and behavior */
+header .site-logo img {
+  display: block;
+  height: 128px;             /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+  pointer-events: auto;
+  filter: none;             /* explicitly ensure no css filters are applied */
+}
+
+/* responsive: smaller logo on narrow screens */
+@media (max-width: 520px) {
+  header .site-logo {
+    left: 12px;
+    top: 12px;
+  }
+  header .site-logo img {
+    height: 48px;
+  }
+}
+
+
+
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text)}
+  a{color:inherit}
+  header{
+    position:relative;background: url('banner.jpg') center center/cover no-repeat;padding:36px 20px;text-align:center;box-shadow: inset 0 0 100px #000;margin-bottom:20px;
+  }
+  header::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:0}
+  header h1,header p{position:relative;z-index:1;font-family:'Orbitron',sans-serif}
+  header h1{font-size:2.6rem;margin:0 0 6px;color:var(--accent-p)}
+  header p{margin:0;color:#e9e9ff}
+  .container{max-width:1100px;margin:0 auto;padding:40px 20px}
+  .back{display:inline-flex;gap:10px;align-items:center;background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:12px;color:#d7d7ee;margin-bottom:18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+  .contrib{
+    background:var(--panel);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.03);
+    display:flex;gap:12px;align-items:center;
+  }
+  .avatar{
+    width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent-p),var(--accent-b));display:flex;align-items:center;justify-content:center;font-size:26px;color:#0b0b10;font-weight:700;
+  }
+  .info h3{margin:0;font-family:'Orbitron',sans-serif;color:var(--accent-b);font-size:1.05rem}
+  .info p{margin:4px 0;color:#d7d7ee;font-size:0.95rem}
+  .role{font-size:0.88rem;color:#bfc0e8}
+  footer{padding:36px 20px;text-align:center;background:#0e0e1a;color:#bfbfdc;margin-top:40px}
+  @media(max-width:520px){header h1{font-size:1.8rem}}
+</style>
+</head>
+<body>
+  <header>
+  <a href="index.html" class="site-logo" aria-label="YSJOI Home">
+  <img src="logo.png" alt="YSJOI logo" />
+  </a>
+    <h1>YSJOI — Contributors</h1>
+    <p>The students, writers, and mentors who made this issue possible</p>
+  </header>
+
+  <div class="container">
+    <a class="back" href="index.html"><i class="fas fa-arrow-left"></i> Back to home</a>
+
+    <div style="margin-top:10px;">
+      <div style="font-family:'Orbitron',sans-serif;color:var(--accent-p);font-size:1.5rem;margin-bottom:8px">Meet the team</div>
+      <div style="color:#d7d7ee;max-width:900px">Introducing out team! If you'd like to contribute, email us and we'll get you involved!</div>
+    </div>
+
+    <div class="grid">
+      <div class="contrib">
+        <div class="avatar">SMB</div>
+        <div class="info">
+          <h3>Satvik M. Bhure</h3>
+          <div class="role">Founder & Editor</div>
+          <p>Founder of YSJOI — leads editorial direction and writes feature explainers.</p>
+        </div>
+      </div>
+
+      <div class="contrib">
+        <div class="avatar">OCT</div>
+        <div class="info">
+          <div class="role">October questioners!</div>
+          <h3>Maryam</h3>
+          <h3>Rozho Michael</h3>
+          <h3>Ismail Salah</h3>
+          <h3>Zakaria Ahmed</h3>
+          <h3>Sorashi B.</h3>
+        </div>
+      </div>
+
+      <!-- placeholder contributor -->
+      <div class="contrib">
+        <div class="avatar">YOU</div>
+        <div class="info">
+          <h3>You?</h3>
+          <div class="role">Contributor</div>
+          <p>Want your name here? Send us an article, experiment, or photo — we take all work from youth!</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:28px; padding:18px; background:linear-gradient(135deg, rgba(162,0,255,0.05), rgba(0,191,255,0.03)); border-radius:12px; border:1px solid rgba(255,255,255,0.03);">
+      <div style="font-weight:700;color:var(--accent-b);font-family:'Orbitron',sans-serif;margin-bottom:8px">Want to contribute?</div>
+      <div style="color:#d7d7ee">Email <a href="mailto:ysjoiofficial@gmail.com">ysjoiofficial@gmail.com</a> with a short pitch, your age, your name, and a sample of your work (Word/PDF/photo). We'll get back to you ASAP!</div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Contact us: <a href="mailto:ysjoiofficial@gmail.com">YSJOIofficial@gmail.com</a></p>
+    <p>© 2025 The Youth Science Journal of Iraq</p>
+    <p>© 2025 Satvik M. Bhure</p>
+  </footer>
+</body>
+</html>
