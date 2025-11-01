@@ -305,6 +305,22 @@ header .site-logo img {
 
 </style>
 
+
+
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '1892428');
+</script>
+<!-- End MailerLite Universal -->
+
+
+
+
+
 </head>
 <header>
   <a href="index.html" class="site-logo" aria-label="YSJOI Home">
@@ -313,6 +329,7 @@ header .site-logo img {
   <h1>The Youth Science Journal of Iraq</h1>
   <h2>The First Iraqi Science Journal for Iraqi Youth!</h2>
   <p>Learn the answers to your questions, and teach us what you know!</p>
+  <a class="ml-onclick-form" href="javascript:void(0)" onclick="ml('show', 'ETVG1n', true)"></a>
 </header>
 
 
@@ -388,13 +405,15 @@ header .site-logo img {
         popup.style.opacity = '1';
       });
     }
+
+
     function hidePopup() {
       popup.style.transform = 'translateY(20px)';
       popup.style.opacity = '0';
     }
 
     // Show on load (short delay so it feels natural)
-    setTimeout(showPopup, 600);
+    setTimeout(showPopup, 5000);
 
     // Close button — hide only for this view (no persistence)
     if (closeBtn) {
