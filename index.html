@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
@@ -7,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Youth Science Journal of Iraq</title>
-<link rel="icon" type="image/png" sizes="32x32" href="favions.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favions.png" >
 <style>
     /* ===== Colors ===== */
     :root {
@@ -243,7 +244,7 @@ header .site-logo {
 /* logo image sizing and behavior */
 header .site-logo img {
   display: block;
-  height: 225px;             /* adjust as needed */
+  height: 175px;             /* adjust as needed */
   width: auto;
   object-fit: contain;
   pointer-events: auto;
@@ -332,7 +333,7 @@ header .site-logo img {
   <div style="
     background: linear-gradient(135deg, rgba(20,20,50,0.98), rgba(40,10,60,0.95));
     border-radius: 16px;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+
     border: 1px solid rgba(255,255,255,0.06);
     overflow: hidden;
   ">
@@ -378,7 +379,6 @@ header .site-logo img {
   (function(){
     // Elements
     const popup = document.getElementById('visitor-popup');
-    const countEl = document.getElementById('visitor-count');
     const closeBtn = document.getElementById('visitor-popup-close');
 
     // Show/hide helpers
@@ -401,31 +401,11 @@ header .site-logo img {
       closeBtn.addEventListener('click', hidePopup);
     }
 
-    // CountAPI: increments and returns the value
-    (function fetchCount(){
-      const namespace = 'ysjoi-counter';
-      const key = 'visitors';
-      const url = 'https://api.countapi.xyz/hit/' + encodeURIComponent(namespace) + '/' + encodeURIComponent(key);
-
-      fetch(url)
-        .then(res => {
-          if (!res.ok) throw new Error('Network response not ok');
-          return res.json();
-        })
-        .then(data => {
-          if (data && typeof data.value !== 'undefined') {
-            countEl.textContent = data.value.toLocaleString();
-          } else {
-            countEl.textContent = '0';
-          }
-        })
-        .catch(err => {
-          console.warn('CountAPI error', err);
-          countEl.textContent = '—';
-        });
-    })();
+    // Note: you already use freevisitorcounters script in the markup above.
   })();
 </script>
+
+
 <section class="intro">
   <!-- Line 1 -->
   <div class="intro-card animate-slide">
@@ -484,14 +464,13 @@ header .site-logo img {
   </ul>
 </section>
 
-
 <section class="ask-section">
   <div class="ask-container">
     <h2>Ask a Question</h2>
     <ul>
       <li><a href="mailto:ysjoiofficial@gmail.com">Email Us</a></li>
-      <li><a href="https://docs.google.com/forms/..." target="_blank">Submit via Google Form</a></li>
-      <li><a href="https://instagram.com/satvik_m_bhure" target="_blank">Message on Instagram</a></li>
+      <li><a href="https://docs.google.com/forms/d/1aWwFD6FUFgioWU9o9K8loqW0NX56UYJSfG2M6GBMuxs" target="_blank">Submit via Google Form</a></li>
+      <li><a href="https://instagram.com/ysjoi_official" target="_blank">Message on Instagram</a></li>
     </ul>
   </div>
 
@@ -504,31 +483,25 @@ header .site-logo img {
   </div>
 </section>
 
-
-
-
-<section id="issuesO">
-<section class="issues">
-  <div class="issue-card">
-
-
-<section class="issues">
-  <div class="issue-card">
-    <h3>Issue #1 – Oct 2025</h3>
-    <button onclick="window.location.href='read online 1.html'">Read Online</button>
-    <button onclick="window.location.href='YSJOI 1.pdf'">Download PDF</button>
-  </div>
-  <div class="issue-card">
-    <h3>Issue #2 – November 2025</h3>
-    <button onclick="window.location.href='#'">Coming soon</button>
-    <button onclick="window.location.href='#'">Coming soon</button>
-  </div>
-</section>
-</section>
-</section>
-
 <!-- ===== Credits + Visitor Counter (INSERT BETWEEN issues and footer) ===== -->
 <section id="credits-and-stats" style="padding:40px 20px; background: linear-gradient(180deg, rgba(10,10,26,0.6), rgba(18,10,36,0.6)); display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:flex-start;">
+
+
+  <!-- Issues card -->
+  <a href="issues.html" style="text-decoration:none; color:inherit;">
+    <div style="width:320px; max-width:92vw; background:linear-gradient(135deg, rgba(0,255,255,0.06), rgba(153,0,204,0.09)); border:1px solid rgba(255,255,255,0.04); padding:22px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.6); display:flex; gap:16px; align-items:center;">
+      <div style="width:64px;height:64px;border-radius:12px; display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.28); box-shadow: inset 0 0 12px rgba(0,255,255,0.12);">
+        <i class="fas fa-newspaper" style="color:var(--accent-color); font-size:24px;"></i>
+      </div>
+      <div style="flex:1;">
+        <div style="font-family: 'Orbitron', sans-serif; font-size:1.05rem; color:var(--accent-color); margin-bottom:6px;">Issues</div>
+        <div style="font-size:0.95rem; color:#d7d7ee;">Every one of the issues of the Monthly YSJOI published so far! (Issue #1 - Oct 2025!)</div>
+      </div>
+    </div>
+  </a>
+
+
+
   <!-- Credits Card 1 -->
   <a href="credits.html" style="text-decoration:none; color:inherit;">
     <div style="width:320px; max-width:92vw; background:linear-gradient(135deg, rgba(153,0,204,0.12), rgba(0,255,255,0.06)); border:1px solid rgba(255,255,255,0.04); padding:22px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.6); display:flex; gap:16px; align-items:center;">
@@ -555,35 +528,13 @@ header .site-logo img {
     </div>
   </a>
 
-  </script>
 </section>
 <!-- ===== end credits & stats section ===== -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <footer>
   <p>Contact us: <a href="mailto:ysjoiofficial@gmail.com">YSJOIofficial@gmail.com</a></p>
   <p>© 2025 The Youth Science Journal of Iraq</p>
   <p>© 2025 Satvik M. Bhure</p>
 </footer>
-
 
 </html>
