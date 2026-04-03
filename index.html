@@ -21,23 +21,37 @@ science questions and answers,
 youth-led science journal,
 Iraq STEM education
 ">
-<meta name="keywords" content="YSJOI, Youth Science Journal of Iraq, Iraqi science journal, student science, STEM Iraq, Iraqi students science">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-<!-- Font Awesome CDN for icons -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Youth Science Journal of Iraq</title>
 <link rel="icon" type="image/png" sizes="32x32" href="favions.png" >
 <style>
-    /* ===== Colors ===== */
+
+.goog-te-banner-frame.skiptranslate, 
+.goog-te-gadget-icon,
+iframe.skiptranslate {
+    display: none !important;
+}
+
+
+body {
+    top: 0px !important;
+}
+
+
+
+
     :root {
-        --bg-color: #0A0A1A; /* dark background */
+        --bg-color: #0A0A1A; 
         --text-color: #FFFFFF;
-        --accent-color: #00FFFF; /* electric blue highlight */
-        --accent-color1: #BF00FF; /* electric purple highlight */
-        --accent-red: #FF0055; /* electric red */
-        --accent-purple: #9900CC; /* electric purple */
+        --accent-color: #00FFFF; 
+        --accent-color1: #BF00FF; 
+        --accent-red: #FF0055; 
+        --accent-purple: #9900CC; 
+
     }
 
     body {
@@ -64,22 +78,22 @@ Iraq STEM education
         transform: translateY(-3px);
     }
 
-    /* ===== Banner ===== */
+
     header {
         position: relative;
-        background: url('banner.jpg') center center / cover no-repeat;
+        background: url('banner.png') center center / cover no-repeat;
         text-align: center;
         padding: 40px 20px;
         color: #f5f5f5;
         box-shadow: inset 0 0 100px #000;
         overflow: hidden;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
     }
     header::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(0,0,0,0.55); /* dull brightness */
+        background: rgba(0,0,0,0.1); 
         z-index: 0;
     }
     header h1, header h2, header p { position: relative; z-index: 1; }
@@ -98,70 +112,280 @@ Iraq STEM education
         text-shadow: 0 0 2px var(--accent-color), 0 0 8px var(--accent-purple);
     }
 
-    /* ===== Intro Section ===== */
-    .intro {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 60px 20px;
-        max-width: 1100px;
-        margin: 0 auto;
-        font-size: 1.3em;
-    }
-    .intro-card {
-        background: #1E1E3F;
-        padding: 15px;
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-        text-align: center;
-        transform: translateX(-100%);
-        opacity: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 15px;
-    }
-    .intro-card span.highlight {
-        color: var(--accent-color);
-        text-align: center;
-        font-weight: bold;
-        animation: pulse 1.2s infinite alternate;
-    }
-    @keyframes pulse {
-        0% { text-shadow: 0 0 3px var(--accent-color); }
-        100% { text-shadow: 0 0 12px var(--accent-red); }
-    }
-    .animate-slide { animation: slideIn 0.8s forwards; }
-    .delay-1 { animation-delay: 0.3s; }
-    .delay-2 { animation-delay: 0.6s; }
-    .delay-3 { animation-delay: 0.9s; }
-    .delay-4 { animation-delay: 1.2s; }
-    .delay-5 { animation-delay: 1.5s; }
-    .delay-6 { animation-delay: 1.8s; }
-    .delay-7 { animation-delay: 2.1s; }
+.meet-team-section {
+  padding: 60px 20px 80px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #140A2A, #0A0A1A, #140A2A);
+  
+}
 
-    @keyframes slideIn {
-        to { transform: translateX(0); opacity: 1; }
-    }
+.meet-team-section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.2em;
+  margin-bottom: 50px;
+  color: var(--accent-color);
+    text-shadow: 0 0 12px var(--accent-purple);
+}
 
-    /* Icon containers */
-    .icon-left, .icon-right {
-        width: 50px;
-        height: 50px;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #2A2A4F;
-        border-radius: 12px;
-        box-shadow: 0 0 10px rgba(0,255,255,0.3);
-    }
-    .icon-left i, .icon-right i {
-        font-size: 24px;
-        color: var(--accent-color1);
-    }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
 
-    /* ===== Issues Grid ===== */
+@media (max-width: 1100px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.team-card {
+  background: linear-gradient(135deg, rgba(0,255,255,0.06), rgba(153,0,204,0.12));
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,255,255,0.3);
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid var(--accent-color);
+}
+
+.team-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 8px;
+}
+
+.role {
+  color: var(--accent-color1);
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.bio {
+  font-size: 0.95em;
+  color: #d7d7ee;
+}
+
+
+
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1.1fr;
+  gap: 60px;
+  padding: 50px 5%;
+  align-items: start;
+}
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-self: start;  
+}
+
+
+
+.quick-cards {
+  display: grid;
+ align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.mini-card {
+  background: linear-gradient(135deg, rgba(0,255,255,0.07), rgba(153,0,204,0.12));
+  padding: 22px 14px;
+  height: auto;
+  padding: 25px 15px;
+  border-radius: 16px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  font-size: 1rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-1 {
+  background: linear-gradient(135deg, #00ffff, #0066ff);
+  box-shadow: 0 5px 15px rgba(0,255,255,0.5);
+}
+
+.card-2 {
+  background: linear-gradient(135deg, #ff0055, #ff00aa);
+  box-shadow: 0 5px 15px rgba(255,0,85,0.5);
+}
+
+.card-3 {
+  background: linear-gradient(135deg, #ffd700, #ffae00);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.8);
+}
+
+.mini-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(255,255,255,0.3);
+}
+
+.mini-card i {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.mini-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+}
+
+
+
+
+
+
+
+
+.site-footer {
+  background-color: #11101A;
+  color: #CCCCCC;
+  padding: 50px 20px 30px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.footer-column h4 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.footer-column a {
+  color: var(--accent-color);
+  transition: 0.3s;
+}
+
+.footer-column a:hover {
+  color: var(--accent-red);
+  text-shadow: 0 0 8px var(--accent-red);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+.intro-box {
+  border-radius: 26px;
+  padding: 65px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+
+.mission-box p,
+.about-box p {
+  font-size: 1.15em;
+}
+
+.mission-box h2 {
+  font-size: 2.4em;
+}
+
+.about-box h2 {
+  font-size: 2.2em;
+}
+
+
+.intro-box:hover {
+  transform: translateY(-6px);
+}
+
+.intro-box h2 {
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 25px;
+}
+
+
+.mission-box {
+  background: linear-gradient(135deg, #25255c, #15152d);
+  border-left: 6px solid var(--accent-purple);
+  border-bottom: 6px solid var(--accent-purple);
+}
+
+.mission-box h2 {
+  color: #ffffff;
+  font-size: 2.1em;
+  text-shadow: 0 0 10px var(--accent-purple);
+}
+
+.mission-box p {
+  line-height: 1.8;
+  color: #f2f2ff;
+  margin-bottom: 18px;
+}
+
+
+.about-box {
+  background: #1E1E3F;
+  border-left: 6px solid var(--accent-color);
+  border-bottom: 6px solid var(--accent-color);
+}
+
+.about-box h2 {
+  color: var(--accent-color);
+  font-size: 1.9em;
+}
+
+.about-box p {
+  line-height: 1.7;
+  color: #e5e5ff;
+  margin-bottom: 18px;
+}
+.signature {
+  font-style: italic;
+  margin-top: 30px;
+  opacity: 0.85;
+}
+@media (max-width: 1000px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
     .issues {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -183,8 +407,7 @@ Iraq STEM education
     .issue-card h3 { margin-bottom: 18px; color: var(--accent-color); }
     .issue-card button { margin: 7px; }
 
-    /* ===== Footer ===== */
-    footer {
+     footer {
         background-color: #11101A;
         color: #CCCCCC;
         text-align: center;
@@ -195,7 +418,7 @@ Iraq STEM education
 
 .ask-section {
   background-color: #1E1E3F;
-  display: flex; /* switch from grid to flex for easier centering */
+  display: flex; 
   justify-content: center;
   gap: 25px;
   flex-wrap: wrap;
@@ -204,17 +427,15 @@ Iraq STEM education
 
 .ask-container {
   width: 100%;
-  max-width: 350px; /* controls box width */
+  max-width: 350px; 
   text-align: center;
   color: var(--text-color);
   background-color: #1E1E3F;
   box-shadow: 0 0 20px rgba(0,255,255,0.2);
   padding: 30px;
   border-radius: 15px;
-  margin: 0 auto; /* centers each box */
+  margin: 0 auto; 
 }
-
-
 .ask-container h2 {
   font-size: 2em;
   margin-bottom: 20px;
@@ -246,8 +467,7 @@ Iraq STEM education
   background-color: #000435;
   padding: 60px 20px;
   text-align: center;
-  margin-bottom: 60px; /* creates space below each section */
-
+  margin-bottom: 60px; 
 }
 
 .breaking-news {
@@ -293,37 +513,37 @@ Iraq STEM education
 
 .ticker span {
   display: inline-block;
-  padding-right: 50px; /* spacing between repeats */
+  padding-right: 50px; 
 }
-
-/* seamless scroll */
 @keyframes scrollTicker {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* because content is duplicated */
+  100% { transform: translateX(-50%); } 
 }
  
 
-/* Logo on top-left of banner, not affected by overlay */
+
+
 header .site-logo {
   position: absolute;
-  left: 1px;
-  top: 1px;
-  z-index: 2;               /* higher than header::before which is z-index:0 */
+  left: 20px;
+  top: 20px;
+  z-index: 2;              
+
   display: block;
   text-decoration: none;
 }
 
-/* logo image sizing and behavior */
 header .site-logo img {
   display: block;
-  height: 175px;             /* adjust as needed */
+  height: 175px;            
   width: auto;
   object-fit: contain;
   pointer-events: auto;
-  filter: none;             /* explicitly ensure no css filters are applied */
+  filter: none;             
+
 }
 
-/* responsive: smaller logo on narrow screens */
+
 @media (max-width: 520px) {
   header .site-logo {
     left: 12px;
@@ -333,6 +553,51 @@ header .site-logo img {
     height: 48px;
   }
 }
+
+
+
+
+
+.team-flash {
+  width: 100%;
+  text-align: center;
+  padding: 14px 0;
+  background: linear-gradient(90deg, #00FFFF, #BF00FF);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  box-shadow: 0 0 20px rgba(191,0,255,0.4);
+  position: relative;
+}
+
+.team-flash a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.team-flash a:hover {
+  transform: translateY(-3px);
+}
+
+.team-badge {
+  background: #000;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  margin-right: 10px;
+  animation: pulseBadge 2s infinite;
+}
+
+@keyframes pulseBadge {
+  0% { box-shadow: 0 0 5px #fff; }
+  50% { box-shadow: 0 0 15px #fff; }
+  100% { box-shadow: 0 0 5px #fff; }
+}
+
+
+
 
 .monthly-questions h2 {
   font-size: 2.5em;
@@ -344,21 +609,147 @@ header .site-logo img {
 .question-list {
   list-style: none;
   padding: 0;
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
-.question-item {
-  font-size: 1.3em;
-  margin: 15px 0;
-  color: var(--text-color);
-  background: #1E1E3F;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,255,255,0.1);
+
+.qa-unified-container {
+  max-width: 800px;
+  margin: 60px auto;
+  background: linear-gradient(145deg, #0D0D2A, #1B1B3C);
+  border-radius: 24px;
+  padding: 40px 30px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+
+
+
+.qa-top-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+
+.qa-small-box {
+  flex: 1 1 180px;
+  background: linear-gradient(135deg, rgba(0,255,255,0.1), rgba(153,0,204,0.15));
+  padding: 30px 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.qa-small-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,255,255,0.4);
+}
+
+.qa-small-box h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color1);
+}
+
+.qa-small-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.qa-small-box li {
+  margin-bottom: 12px;
+}
+
+.qa-small-box a {
+  color: var(--accent-color);
+  font-weight: 600;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.qa-small-box a:hover {
+  color: var(--accent-red);
+  text-shadow: 0 0 8px var(--accent-red);
+}
+
+
+.qa-section-title {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5em;
+  color: var(--accent-color);
+  margin-bottom: 40px;
+  text-shadow: 0 0 12px var(--accent-purple);
+}
+
+
+.qa-questions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+
+  gap: 25px;
+  justify-content: center; 
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.qa-question-item {
+  background: linear-gradient(135deg, rgba(0,255,255,0.05), rgba(153,0,204,0.12));
+  border-radius: 16px;
+  padding: 20px 18px;
+  margin: 0px 0px 30px 0px;
+  font-size: 1.2em;
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   opacity: 0;
   transform: translateY(30px);
   animation: fadeSlideUp 0.8s forwards;
+    align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 120px; 
+
+}
+
+.qa-question-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,255,255,0.3);
+}
+
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+
+
+@media (max-width: 1000px) {
+  .qa-top-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .qa-small-box {
+    width: 100%;
+    max-width: 400px;
+  }
 }
 
 @keyframes fadeSlideUp {
@@ -375,11 +766,87 @@ header .site-logo img {
 .delay-5 { animation-delay: 1.5s; }
 
 
+
+.language-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.goog-te-banner-frame.skiptranslate {
+display: none !important;
+}
+body {
+top: 0px !important;
+}
+
+.language-switcher button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+color: var(--color-black);
+
+}
+
+.language-switcher img {
+  width: 20px;
+  height: 14px;
+}
+
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+
+body {
+  top: 0px !important;
+}
+
+
+.goog-te-gadget {
+  display: none !important;
+}
 </style>
 
 
 
-<!-- MailerLite Universal -->
+
+<script>
+window.onload = function () {
+
+  const savedLang = localStorage.getItem("siteLanguage");
+
+  if(savedLang && savedLang !== "en"){
+
+    const interval = setInterval(function(){
+
+      const select = document.querySelector(".goog-te-combo");
+
+      if(select){
+        select.value = savedLang;
+        select.dispatchEvent(new Event("change"));
+        clearInterval(interval);
+      }
+
+    },500);
+
+  }
+
+}
+</script>
+
+
+
+
 <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
     .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
@@ -387,7 +854,7 @@ header .site-logo img {
     (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
     ml('account', '1892428');
 </script>
-<!-- End MailerLite Universal -->
+
 
 
 
@@ -409,6 +876,51 @@ header .site-logo img {
 
 
 </head>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      includedLanguages: 'en,ar,ckb',
+      autoDisplay: false
+    },
+    'google_translate_element'
+  );
+}
+
+
+function setLanguage(lang) {
+  localStorage.setItem("siteLanguage", lang);
+  
+
+  let count = 0;
+  const checkInterval = setInterval(() => {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+      clearInterval(checkInterval);
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    }
+
+    if (count++ > 50) clearInterval(checkInterval); 
+  }, 100);
+}
+
+
+window.addEventListener("load", function () {
+  const savedLang = localStorage.getItem("siteLanguage");
+  if (savedLang && savedLang !== "en") {
+
+    setTimeout(() => setLanguage(savedLang), 1000);
+  }
+});
+</script>
+
+
 <header>
 
   <a href="index.html" class="site-logo" aria-label="YSJOI Home">
@@ -418,21 +930,40 @@ header .site-logo img {
   <h2>The First Iraqi Science Journal for Iraqi Youth!</h2>
   <p>Learn the answers to your questions, and teach us what you know!</p>
   <a class="ml-onclick-form" href="javascript:void(0)" onclick="ml('show', 'ETVG1n', true)"></a>
-</header>
+<div class="language-switcher">
+  <button onclick="setLanguage('en')">
+    <img src="uk.png">  </button>
 
+  <button onclick="setLanguage('ckb')">
+    <img src="kurdistan.png"> 
+  </button>
+
+  <button onclick="setLanguage('ar')">
+    <img src="iraq.png"> 
+  </button>
+</div>
+</header>
+<div id="google_translate_element" style="display:none;"></div>
 <div class="breaking-news">
 
   <div class="ticker-wrapper">
     <div class="ticker">
-      <span>YSJOI Issue #4 is out! The January 2026 Issue is out! &nbsp;&nbsp;&nbsp;</span>
-      <span>YSJOI Issue #4 is out! The January 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
-<span>YSJOI Issue #4 is out! The January 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
-<span>YSJOI Issue #4 is out! The January 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
+      <span>YSJOI Issue #6 is out! The March 2026 Issue is out! &nbsp;&nbsp;&nbsp;</span>
+      <span>YSJOI Issue #6 is out! The March 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
+<span>YSJOI Issue #6 is out! The March 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
+<span>YSJOI Issue #6 is out! The March 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
     </div>
   </div>
 </div>
 
-<!-- ===== VISITOR COUNTER POPUP (cleaned, single instance) ===== -->
+<div class="team-flash">
+  <a href="#meet-the-team">
+    🤯😮 YSJOI Is Growing — <u>Meet The YSJOI Team</u>
+  </a>
+</div>
+
+
+
 <div id="visitor-popup" aria-live="polite" style="
   position: fixed;
   right: 20px;
@@ -452,7 +983,7 @@ header .site-logo img {
     border: 1px solid rgba(255,255,255,0.06);
     overflow: hidden;
   ">
-    <!-- header row -->
+
     <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; background: linear-gradient(90deg, rgba(162,0,255,0.06), rgba(0,191,255,0.03));">
       <div style="display:flex; gap:12px; align-items:center;">
         <div style="width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:#0f1330; box-shadow: inset 0 0 12px rgba(162,0,255,0.06);">
@@ -466,7 +997,7 @@ header .site-logo img {
 <p style="display:none;">
 The Youth Science Journal of Iraq (YSJOI) is an Iraqi youth-led science journal focusing on STEM education and student research.
 </p>
-      <!-- content --><!-- close button -->
+
       <button id="visitor-popup-close" aria-label="Close visitor popup" style="
         background: transparent;
         border: none;
@@ -480,7 +1011,7 @@ The Youth Science Journal of Iraq (YSJOI) is an Iraqi youth-led science journal 
 
 
 
-    <!-- content -->
+
     <div style="padding:20px 18px 24px 18px; display:flex; flex-direction:column; align-items:center; gap:8px;">
       
       <div id="visitor-counter" style="transform: scale(1.8); margin-bottom: 30px">
@@ -495,11 +1026,11 @@ The Youth Science Journal of Iraq (YSJOI) is an Iraqi youth-led science journal 
 
 <script>
   (function(){
-    // Elements
+
     const popup = document.getElementById('visitor-popup');
     const closeBtn = document.getElementById('visitor-popup-close');
 
-    // Show/hide helpers
+
     function showPopup() {
       requestAnimationFrame(() => {
         popup.style.transform = 'translateY(0)';
@@ -513,101 +1044,246 @@ The Youth Science Journal of Iraq (YSJOI) is an Iraqi youth-led science journal 
       popup.style.opacity = '0';
     }
 
-    // Show on load (short delay so it feels natural)
+
     setTimeout(showPopup, 5000);
 
-    // Close button — hide only for this view (no persistence)
+
     if (closeBtn) {
       closeBtn.addEventListener('click', hidePopup);
     }
 
-    // Note: you already use freevisitorcounters script in the markup above.
+
   })();
 </script>
 
 
-<section class="intro">
-  <!-- Line 1 -->
-  <div class="intro-card animate-slide">
-    <div class="icon-left"><i class="fas fa-glasses" ></i></div>
-    <p>Welcome, <span class="highlight">scientists of the future</span>! Get ready for a journey like no other.</p>
-    <div class="icon-right"><i class="fas fa-flask"></i></div>
+<section class="intro-grid">
+
+
+  <div class="intro-box mission-box">
+    <h2>Our Mission</h2>
+    <p>
+      YSJOI - by the youth, for the youth of Iraq!
+    </p>
+    <p>
+      In the great land that was once Mesopotamia, and the home of the hanging gardens of Babylon, progress in science has slowed.
+    </p>
+    <p><strong>Why?</strong></p>
+    <p>
+      Because the youth of Iraq have no platform to build upon. Opportunities to learn about science, technology, engineering, and mathematics are rare, and students trying to learn about them are even actively discouraged.
+    </p>
+    <p>
+      But instead of surrendering to that silence, we build our own base.
+    </p>
+    <p>
+      And that first step is YSJOI — a place to teach, learn, and explore.
+    </p>
+    <p class="signature">
+      — From the Founding Speech of Satvik M. Bhure
+    </p>
   </div>
 
-  <!-- Line 2 (no icons) -->
-  <div class="intro-card animate-slide delay-1" style="justify-content: center;">
-    <p>For the youth of Iraq — to <span class="highlight">learn</span> and <span class="highlight">teach</span> — we bring you the Youth Science Journal of Iraq (YSJOI)!</p>
+
+  <div class="right-column">
+    <div class="quick-cards">
+
+
+      <a href="issues.html" class="mini-card card-1">
+        <i class="fas fa-newspaper"></i>
+        <span>Published YSJOI Issues</span>
+      </a>
+
+
+       <a href="credits.html" class="mini-card card-2">
+        <i class="fas fa-lightbulb"></i>
+        <span>Solved Questions + Relevant Issues</span>
+      </a>
+
+
+      <a href="contributors.html" class="mini-card card-3">
+        <i class="fas fa-users"></i>
+        <span>Contributors & Credits</span>
+      </a>
+
+    </div>
+  <div class="intro-box about-box">
+    <h2>About YSJOI</h2>
+    <p>
+      The Youth Science Journal of Iraq (YSJOI) is a student-led scientific publication created to
+      give young minds in Iraq a platform to explore, question, and contribute to the world of STEM.
+    </p>
+    <p>
+      Each month, we publish selected questions, researched answers, and student contributions
+      across physics, mathematics, biology, engineering, and beyond.
+    </p>
+    <p>
+      Whether you are here to read, ask, or contribute — you are part of the next generation
+      shaping Iraq’s scientific future.
+    </p>
+  </div>
+</div>
+</section>
+
+
+<section class="qa-unified-container">
+
+
+  <div class="qa-top-row">
+    <div class="qa-small-box ask-box">
+      <h3>Ask a Question</h3>
+      <ul>
+        <li><a href="mailto:ysjoiofficial@gmail.com">Email Us</a></li>
+        <li><a href="https://docs.google.com/forms/d/1aWwFD6FUFgioWU9o9K8loqW0NX56UYJSfG2M6GBMuxs" target="_blank">Submit via Google Form</a></li>
+        <li><a href="https://instagram.com/ysjoi_official" target="_blank">Message on Instagram</a></li>
+      </ul>
+    </div>
+
+    <div class="qa-small-box answer-box">
+      <h3>Answer Questions</h3>
+      <ul>
+        <li><a href="mailto:ysjoiofficial@gmail.com">Email Us</a></li>
+      </ul>
+      <p>Attach your work as a Word file with your name included!</p>
+    </div>
   </div>
 
-  <!-- Line 3 -->
-  <div class="intro-card animate-slide delay-2">
-    <div class="icon-left"><i class="fas fa-desktop"></i></div>
-    <p>For the very first time in Iraq, where opportunities in <span class="highlight">STEM</span> have long been limited, we open the doors for young minds to explore.</p>
-    <div class="icon-right"><i class="fas fa-calculator"></i></div>
-  </div>
 
-  <!-- Line 4 -->
-  <div class="intro-card animate-slide delay-3">
-    <div class="icon-left"><i class="fas fa-brain"></i></div>
-    <p>Your <span class="highlight">field</span>, your <span class="highlight">dream</span>, your <span class="highlight">choice</span>; we all learn differently, so choose your path:</p>
-    <div class="icon-right"><i class="fas fa-comment-dots"></i></div>
-  </div>
+  <h2 class="qa-section-title">March 2026: This Month's Questions</h2>
 
-  <!-- Line 5 -->
-  <div class="intro-card animate-slide delay-4" style="justify-content: center;">
-    <p>Ask the questions that spark your curiosity, and get your answers in the next issue of the YSJOI; or choose a question to explore and have your <span class="highlight">article featured</span>!</p>
-  </div>
 
-  <!-- Line 6 -->
-  <div class="intro-card animate-slide delay-5" style="justify-content: center;">
-    <p>Read the monthly YSJOI and <span class="highlight">learn</span> with us all — whichever way you explore and create, <span class="highlight">you belong here</span>.</p>
-  </div>
+  <ul class="qa-questions-grid">
+    <li class="qa-question-item delay-1">🕰️ Why do we not know what dark matter is?
+</li>
+    <li class="qa-question-item delay-2">🌌 Why are some non-metals so strange?
+</li>
+    <li class="qa-question-item delay-3">🪶 How do planes stay in the air?
+</li></ul>
+   <ul class="qa-questions-grid">
+    <li class="qa-question-item delay-4"> If bones are four times as strong as concrete, why do they break so easily?
+</li>
+    <li class="qa-question-item delay-5">What If Your Brain Is Just Predicting Reality Instead of Seeing It?</li>  </ul>
 
-  <!-- Line 7 -->
-  <div class="intro-card animate-slide delay-6">
-    <div class="icon-left"><i class="fas fa-arrow-down"></i></div>
-    <div class="icon-left"><i class="fas fa-arrow-down"></i></div>
- <p>Follow the links below, pick your path, and <span class="highlight">begin your journey</span> with YSJOI!</p>
- <div class="icon-left"><i class="fas fa-arrow-down"></i></div>
-    <div class="icon-right"><i class="fas fa-arrow-down"></i></div>
+</section>
+
+
+
+
+
+
+<section id="meet-the-team" class="meet-team-section">
+  <h2>Meet The Team</h2>
+  <div class="team-grid">
+
+    <div class="team-card">
+      <img src="team1.png" alt="Team Member">
+      <h3 translate="no">Satvik M. Bhure</h3>
+      <p class="role">Founder and Chief Editor</p>
+      <p class="bio">
+The visionary leader behind YSJOI, always advocating for young scientific voices. Oversees editorial direction, standards, and long-term strategy whilst ensuring every issue reflects curiosity, integrity, and innovation - the ideals that YSJOI was founded on.
+      </p>
+    </div>
+
+    <div class="team-card">
+      <img src="team2.jpeg" alt="Team Member">
+      <h3 translate="no">Ali Ahmed Kayani</h3>
+      <p class="role">Head of Questions Department</p>
+      <p class="bio">
+Researches thought-provoking and academically rigorous content for each issue, focusing on crafting challenges that inspire curiosity, analytical thinking, and deeper exploration in STEM fields. Continually strives to make YSJOI both engaging and intellectually stimulating.
+      </p>
+    </div>
+
+    <div class="team-card">
+      <img src="team3.jpeg" alt="Team Member">
+      <h3 translate="no">Parwar Phicri</h3>
+      <p class="role">Head of Editing</p>
+      <p class="bio">
+Ensures that every article published meets YSJOI's high standards of accuracy, clarity, and structure. Refine submissions with the eyes of a hawk while preserving each author’s voice, this dedication upholds the professionalism and credibility of the journal.      </p>
+    </div>
+
+    <div class="team-card">
+      <img src="team4.jpeg" alt="Team Member">
+      <h3 translate="no">Ahmed Mohammed</h3>
+      <p class="role">Head of IT</p>
+      <p class="bio">
+Leads the technological backbone of YSJOI, managing the website, digital systems, and technical development. Ensures a seamless, secure, and modern platform for readers and contributors; transformed question-asker now helping others. 
+      </p>
+    </div>
+
+
+    <div class="team-card">
+      <h3 translate="no">Hasar Salah</h3>
+      <p class="role">Editorial Team Member</p>
+      <p class="bio">
+        Supports editing and review processes, contributing to research verification
+        and publication quality control.
+      </p>
+    </div>
+
+
+    <div class="team-card">
+      <h3 translate="no">Asal Ibrahim</h3>
+      <p class="role">Editorial Team Member</p>
+      <p class="bio">
+        Assists in reviewing submissions, improving clarity and academic structure
+        across published content.
+      </p>
+    </div>
+
+
+    <div class="team-card">
+      <h3 translate="no">Syed Minhal</h3>
+      <p class="role">Editorial Team Member</p>
+      <p class="bio">
+        Contributes to editing and content refinement, helping maintain the
+        professional standard of every issue.
+      </p>
+    </div>
+
+
+    <div class="team-card">
+      <h3 translate="no">Safa Wisam</h3>
+      <p class="role">Editorial Team Member</p>
+      <p class="bio">
+       Helps in the verification of all articles' content and ensures that all content meets YSJOI standards.
+      </p>
+    </div>
+
+
+    <div class="team-card">
+      <h3 translate="no">Abdullah Haider</h3>
+      <p class="role">Articles and Exclusives</p>
+      <p class="bio">
+        Writes articles, brings exclusive content and special information, including hands-on experience to YSJOI.
+      </p>
+    </div>
+
+
+
+    <div class="team-card">
+      <h3 translate="no">Yousif Muhammed</h3>
+      <p class="role">Articles and Youth</p>
+      <p class="bio">
+        Informatory articles and new outlooks! As our youngest member, brings fresh perspectives to our work.
+      </p>
+    </div>
+
+
+
+
+  </div>
+</section>
   </div>
 </section>
 
-<section class="monthly-questions">
-  <h2>January 2026 : Questions</h2>
-  <ul class="question-list">
-    <li class="question-item delay-1">🕰️ If time can slow down or speed up, can it ever stop completely? </li>
-    <li class="question-item delay-2">🌌 Why does the universe seem to follow math so perfectly?</li>
-    <li class="question-item delay-3">🪶 Could there be life that doesn’t use water at all?</li>
-    <li class="question-item delay-4">👩‍🚀 If everything is made of particles, what holds reality together at the smallest scale?</li>
-    <li class="question-item delay-5">⚡ Why is the speed of light the speed limit of the universe?</li>
-  </ul>
-</section>
 
-<section class="ask-section">
-  <div class="ask-container">
-    <h2>Ask a Question</h2>
-    <ul>
-      <li><a href="mailto:ysjoiofficial@gmail.com">Email Us</a></li>
-      <li><a href="https://docs.google.com/forms/d/1aWwFD6FUFgioWU9o9K8loqW0NX56UYJSfG2M6GBMuxs" target="_blank">Submit via Google Form</a></li>
-      <li><a href="https://instagram.com/ysjoi_official" target="_blank">Message on Instagram</a></li>
-    </ul>
-  </div>
 
-  <div class="ask-container">
-    <h2>Answer January's Questions</h2>
-    <ul>
-      <li><a href="mailto:ysjoiofficial@gmail.com">Email Us</a></li>
-    </ul>
-<p>(Make sure to attach your work as a Word file, with your name included!)</p>
-  </div>
-</section>
 
-<!-- ===== Credits + Visitor Counter (INSERT BETWEEN issues and footer) ===== -->
+
+
 <section id="credits-and-stats" style="padding:40px 20px; background: linear-gradient(180deg, rgba(10,10,26,0.6), rgba(18,10,36,0.6)); display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:flex-start;">
 
 
-  <!-- Issues card -->
+
   <a href="issues.html" style="text-decoration:none; color:inherit;">
     <div style="width:320px; max-width:92vw; background:linear-gradient(135deg, rgba(0,255,255,0.06), rgba(153,0,204,0.09)); border:1px solid rgba(255,255,255,0.04); padding:22px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.6); display:flex; gap:16px; align-items:center;">
       <div style="width:64px;height:64px;border-radius:12px; display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.28); box-shadow: inset 0 0 12px rgba(0,255,255,0.12);">
@@ -622,7 +1298,7 @@ The Youth Science Journal of Iraq (YSJOI) is an Iraqi youth-led science journal 
 
 
 
-  <!-- Credits Card 1 -->
+
   <a href="credits.html" style="text-decoration:none; color:inherit;">
     <div style="width:320px; max-width:92vw; background:linear-gradient(135deg, rgba(153,0,204,0.12), rgba(0,255,255,0.06)); border:1px solid rgba(255,255,255,0.04); padding:22px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.6); display:flex; gap:16px; align-items:center;">
       <div style="width:64px;height:64px;border-radius:12px; display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.28); box-shadow: inset 0 0 12px rgba(155,0,255,0.12);">
@@ -635,7 +1311,7 @@ The Youth Science Journal of Iraq (YSJOI) is an Iraqi youth-led science journal 
     </div>
   </a>
 
-  <!-- Credits Card 2 -->
+
   <a href="contributors.html" style="text-decoration:none; color:inherit;">
     <div style="width:320px; max-width:92vw; background:linear-gradient(135deg, rgba(0,255,255,0.06), rgba(153,0,204,0.09)); border:1px solid rgba(255,255,255,0.04); padding:22px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.6); display:flex; gap:16px; align-items:center;">
       <div style="width:64px;height:64px;border-radius:12px; display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.28); box-shadow: inset 0 0 12px rgba(0,255,255,0.12);">
@@ -649,13 +1325,45 @@ The Youth Science Journal of Iraq (YSJOI) is an Iraqi youth-led science journal 
   </a>
 
 </section>
-<!-- ===== end credits & stats section ===== -->
 
-<footer>
-  <p>Contact us: <a href="mailto:ysjoiofficial@gmail.com">YSJOIofficial@gmail.com</a></p>
-  <p>© 2025 The Youth Science Journal of Iraq</p>
-  <p>© 2025 Satvik M. Bhure</p>
+
+<footer class="site-footer">
+
+  <div class="footer-container">
+
+
+    <div class="footer-column">
+      <h4>General Contact</h4>
+      <p>Email: <a href="mailto:ysjoiofficial@gmail.com">YSJOIofficial@gmail.com</a></p>
+    </div>
+
+
+    <div class="footer-column">
+      <h4>IT Team</h4>
+      <p>Email: <a href="mailto:ahmed.m26611.1113@gmail.com">Ahmed.M26611.1113@gmail.com</a></p>
+    </div>
+
+
+    <div class="footer-column">
+      <h4>Questions Department</h4>
+      <p>Email: <a href="mailto:aliahmadkayanii2009@gmail.com">AliAhmadKayanii2009@gmail.com</a></p>
+    </div>
+
+
+    <div class="footer-column">
+      <h4>Editing Team</h4>
+      <p>Email: <a href="mailto:parwar66ph@gmail.com">Parwar66Ph@gmail.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 The Youth Science Journal of Iraq</p>
+    <p>© 2025 Satvik M. Bhure</p>
+  </div>
+
+
+
 </footer>
-
-
+</body>
 </html>

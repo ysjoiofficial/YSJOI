@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,20 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>YSJOI — Solved Questions</title>
+<link rel="canonical" href="https://ysjoi.is-great.org/credits.html">
 <link rel="icon" type="image/png" sizes="32x32" href="favions.png">
 <style>
+
+.goog-te-banner-frame.skiptranslate, 
+.goog-te-gadget-icon,
+iframe.skiptranslate {
+    display: none !important;
+}
+
+
+body {
+    top: 0px !important;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -20,27 +33,26 @@ html {
     --accent-r:#FF0055;
   }
 
-/* Logo on top-left of banner, not affected by overlay */
+
 header .site-logo {
   position: absolute;
   left: 1px;
   top: 1px;
-  z-index: 2;               /* higher than header::before which is z-index:0 */
+  z-index: 2;              
   display: block;
   text-decoration: none;
 }
 
-/* logo image sizing and behavior */
 header .site-logo img {
   display: block;
-  height: 128px;             /* adjust as needed */
+  height: 128px;          
+
   width: auto;
   object-fit: contain;
   pointer-events: auto;
-  filter: none;             /* explicitly ensure no css filters are applied */
+  filter: none;            
 }
 
-/* responsive: smaller logo on narrow screens */
 @media (max-width: 520px) {
   header .site-logo {
     left: 12px;
@@ -50,6 +62,16 @@ header .site-logo img {
     height: 48px;
   }
 }
+    :root {
+        --bg-color: #0A0A1A; 
+
+        --text-color: #FFFFFF;
+        --accent-color: #00FFFF; 
+        --accent-color1: #BF00FF;
+        --accent-red: #FF0055; 
+        --accent-purple: #9900CC;
+    }
+
 
  .ysjoi .ys {
   color: #ffffff;
@@ -74,13 +96,13 @@ header .site-logo img {
   a{color:inherit;text-decoration:none}
   header{
     position:relative;
-    background: url('banner.jpg') center center / cover no-repeat;
+    background: url('banner.png') center center / cover no-repeat;
     padding:36px 20px;
     text-align:center;
     box-shadow: inset 0 0 100px #000;
     margin-bottom:20px;
   }
-  header::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:0}
+  header::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.1);z-index:0}
   header h1, header p{position:relative;z-index:1;font-family:'Orbitron',sans-serif}
   header h1{font-size:2.6rem;margin:0 0 6px;color:var(--accent-p);text-shadow:0 0 8px var(--accent-p)}
   header p{margin:0;color:#e9e9ff;text-shadow:0 0 6px var(--accent-b)}
@@ -97,7 +119,7 @@ header .site-logo img {
     margin-bottom:18px;
   }
   .page-title{font-family:'Orbitron',sans-serif;color:var(--accent-b);font-size:1.6rem;margin:6px 0 18px}
-  /* grid of solved questions */
+
   .qa-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
   .qa-card{
     background:var(--panel);
@@ -109,7 +131,7 @@ header .site-logo img {
   .qa-card h3{margin:0 0 8px;color:var(--accent-p);font-family:'Orbitron',sans-serif}
   .meta{font-size:0.9rem;color:#cfcfe8;margin-bottom:10px}
   .answer{color:#e8e8ff;line-height:1.5;font-size:0.98rem}
-  /* accordion toggle */
+
   .short{display:block}
   .full { display:none; margin-top:10px; color:#d6d6ff; }
   .qa-actions{margin-top:12px;display:flex;gap:10px;align-items:center}
@@ -117,26 +139,224 @@ header .site-logo img {
     padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
     background:transparent;color:#d7d7ee;font-weight:600;font-size:0.9rem;
   }
-  /* highlight block for curated "top" answers */
+
+
+
+
+
+.site-footer {
+  background-color: #11101A;
+  color: #CCCCCC;
+  padding: 50px 20px 30px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.search-container {
+  background: white;
+  position: relative;
+  max-width: 400px;
+  margin: 20px auto 0;
+  z-index: 1;
+}
+
+#quizSearch {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: 0.3s;
+}
+
+#quizSearch:focus {
+  border-color: var(--accent-b);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-b);
+  opacity: 0.7;
+}
+
+.footer-column h4 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.footer-column a {
+  color: var(--accent-color);
+  transition: 0.3s;
+}
+
+.footer-column a:hover {
+  color: var(--accent-red);
+  text-shadow: 0 0 8px var(--accent-red);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+
   .featured{
     background:linear-gradient(135deg, rgba(162,0,255,0.06), rgba(0,191,255,0.03));
     border:1px solid rgba(255,255,255,0.04);
     padding:14px;border-radius:12px;margin-bottom:20px;color:#eaf6ff;
   }
   footer{padding:36px 20px;text-align:center;background:#0e0e1a;color:#bfbfdc;margin-top:40px}
-  /* small responsive tweaks */
+
   @media (max-width:520px){
     header h1{font-size:1.8rem}
     .container{padding:20px}
   }
+.language-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.goog-te-banner-frame.skiptranslate {
+display: none !important;
+}
+body {
+top: 0px !important;
+}
+
+.language-switcher button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+color: var(--color-black);
+}
+
+.language-switcher img {
+  width: 20px;
+  height: 14px;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+
+body {
+  top: 0px !important;
+}
+
+
+.goog-te-gadget {
+  display: none !important;
+}
+
 </style>
 
 
 
 
-
-
 </head>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      includedLanguages: 'en,ar,ckb',
+      autoDisplay: false
+    },
+    'google_translate_element'
+  );
+}
+
+function setLanguage(lang) {
+  localStorage.setItem("siteLanguage", lang);
+  
+
+  let count = 0;
+  const checkInterval = setInterval(() => {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+      clearInterval(checkInterval);
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    }
+
+    if (count++ > 50) clearInterval(checkInterval); 
+  }, 100);
+}
+
+
+window.addEventListener("load", function () {
+  const savedLang = localStorage.getItem("siteLanguage");
+  if (savedLang && savedLang !== "en") {
+
+    setTimeout(() => setLanguage(savedLang), 1000);
+  }
+});
+</script>
+
+
+
+<script>
+function filterQuestions() {
+  let input = document.getElementById('quizSearch').value.toLowerCase();
+  let cards = document.getElementsByClassName('qa-card');
+  let noResults = document.getElementById('noResults');
+  let visibleCount = 0;
+
+  for (let i = 0; i < cards.length; i++) {
+    let cardText = cards[i].innerText.toLowerCase();
+    
+    if (cardText.includes(input)) {
+      cards[i].style.display = ""; 
+      visibleCount++;
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+
+
+  if (visibleCount === 0) {
+    noResults.style.display = "block";
+  } else {
+    noResults.style.display = "none";
+  }
+}
+</script>
+
+
+
+
+
+
 <body>
  <header>
      <a href="index.html" class="site-logo" aria-label="YSJOI Home">
@@ -144,15 +364,37 @@ header .site-logo img {
   </a>
   <h1>YSJOI — Solved Questions</h1>
   <p>All the questions we've solved so far!</p>
-</header>
+<div class="language-switcher">
+  <button onclick="setLanguage('en')">
+    <img src="uk.png">  </button>
 
+  <button onclick="setLanguage('ckb')">
+    <img src="kurdistan.png"> 
+  </button>
+
+  <button onclick="setLanguage('ar')">
+    <img src="iraq.png"> 
+  </button>
+</div>
+<div class="search-container">
+  <i class="fas fa-search search-icon"></i>
+  <input type="text" id="quizSearch" placeholder="Search questions or issues (e.g. March)..." onkeyup="filterQuestions()">
+</div>
+
+</header>
+<div id="google_translate_element" style="display:none;"></div>
 <div class="container">
   <a class="back" href="index.html"><i class="fas fa-arrow-left"></i> Back to home</a>
 
   <div class="page-title">Each question with its issue!</div>
+<div id="noResults" style="display:none; text-align:center; padding: 40px; color: var(--accent-b); font-family: 'Orbitron', sans-serif;">
+    <i class="fas fa-search-minus" style="font-size: 3rem; display:block; margin-bottom:15px; opacity:0.5;"></i>
+    No matching questions found.
+</div>
 
   <div class="qa-grid">
-    <!-- Q/A 1 -->
+
+
     <article class="qa-card" id="q1">
       <h3>Is Cancer Genetic?</h3>
       <div class="meta">Category: Human Biology</div>
@@ -164,7 +406,7 @@ header .site-logo img {
       </div>
     </article>
 
-    <!-- Q/A 2 -->
+
     <article class="qa-card" id="q2">
       <h3>If time stops in a black hole, does that mean that the black hole is frozen in time?</h3>
       <div class="meta">Category: Astrophysics</div>
@@ -176,7 +418,7 @@ header .site-logo img {
       </div>
     </article>
 
-    <!-- Q/A 3 -->
+
     <article class="qa-card" id="q3">
       <h3>Can humans change our own genes? Or add new ones?</h3>
       <div class="meta">Category: Human Biology</div>
@@ -188,7 +430,7 @@ header .site-logo img {
       </div>
     </article>
 
-    <!-- Q/A 4 -->
+
     <article class="qa-card" id="q4">
       <h3>Why do we live near volcanoes even though they are so dangerous?</h3>
       <div class="meta">Category: Geology</div>
@@ -200,7 +442,7 @@ header .site-logo img {
       </div>
     </article>
 
-    <!-- Q/A 5 -->
+
     <article class="qa-card" id="q5">
       <h3>How does light pass through glass, which is solid?</h3>
       <div class="meta">Category: Physics-Chemistry</div>
@@ -211,7 +453,7 @@ header .site-logo img {
         </div>
       </div>
     </article>
-<!-- Q/A 4 -->
+
     <article class="qa-card" id="q4">
       <h3>What would happen if the Earth stopped spinning?</h3>
       <div class="meta">Category: Astrophysics</div>
@@ -222,7 +464,7 @@ header .site-logo img {
         </div>
       </div>
     </article>
-<!-- Q/A 4 -->
+
     <article class="qa-card" id="q4">
       <h3>How did the Dinosaurs go extinct?</h3>
       <div class="meta">Category: Astrophysics+Geology</div>
@@ -233,7 +475,7 @@ header .site-logo img {
         </div>
       </div>
     </article>
-<!-- Q/A 4 -->
+
     <article class="qa-card" id="q4">
       <h3>Can we edit genes to cure all diseases?</h3>
       <div class="meta">Category: Biology</div>
@@ -244,7 +486,7 @@ header .site-logo img {
         </div>
       </div>
     </article>
-<!-- Q/A 4 -->
+
     <article class="qa-card" id="q4">
       <h3>How does the brain work?</h3>
       <div class="meta">Category: Human Biology</div>
@@ -255,7 +497,7 @@ header .site-logo img {
         </div>
       </div>
     </article>
-<!-- Q/A 4 -->
+
     <article class="qa-card" id="q4">
       <h3>How does sacrificial protection from rusting work?</h3>
       <div class="meta">Category: Particle Physics+Chemistry</div>
@@ -267,7 +509,7 @@ header .site-logo img {
       </div>
     </article>
 
-<!-- Q/A 4 -->
+
     <article class="qa-card" id="q4">
       <h3>If space is a vacuum, how do things like gravity and light move through it?</h3>
       <div class="meta">Category: Astrophysics</div>
@@ -279,7 +521,7 @@ header .site-logo img {
       </div>
     </article>
 
-<!-- Q/A 4 -->
+
     <article class="qa-card" id="q4">
       <h3>What is time made of?</h3>
       <div class="meta">Category: Dimensional Astrophysics</div>
@@ -291,7 +533,7 @@ header .site-logo img {
       </div>
     </article>
 
-<!-- Q/A 4 -->
+
     <article class="qa-card" id="q4">
       <h3>If evolution is random, how did different species evolve so many similar organs?</h3>
       <div class="meta">Category: Evolutionary Biology</div>
@@ -303,7 +545,7 @@ header .site-logo img {
       </div>
     </article>
 
-<!-- Q/A 4 -->
+
     <article class="qa-card" id="q4">
       <h3>If light has no mass how does gravity affect it?</h3>
       <div class="meta">Category: Astrophysics</div>
@@ -315,7 +557,7 @@ header .site-logo img {
       </div>
     </article>
 
-<!-- Q/A 4 -->
+
     <article class="qa-card" id="q4">
       <h3>Could humans evolve to breathe on Mars?</h3>
       <div class="meta">Category: Astrophysics+Evolutionary Biology</div>
@@ -327,7 +569,7 @@ header .site-logo img {
       </div>
     </article> 
 
-<!-- Q/A 4 -->
+
 <article class="qa-card" id="q1">
   <h3>If time can slow down or speed up, can it ever stop completely?</h3>
   <div class="meta">Category: Physics + Cosmology</div>
@@ -390,25 +632,126 @@ header .site-logo img {
 </article>
 
 
+<article class="qa-card" id="q5">
+  <h3>What is the future of Fusion Energy on Earth?</h3>
+  <div class="meta">Category: Energy and Sustainability</div>
+  <div class="answer">
+    <div class="short">February 2026 question, Issue 5!
+    </div>
+    <div class="qa-actions">
+      <a class="btn-link" href="issues.html">Related: Issue #5</a>
+    </div>
+  </div>
+</article>
+<article class="qa-card" id="q5">
+  <h3>What is quantum physics and why is it so different to regular physics?</h3>
+  <div class="meta">Category: Special Relativity</div>
+  <div class="answer">
+    <div class="short">February 2026 question, Issue 5!
+    </div>
+    <div class="qa-actions">
+      <a class="btn-link" href="issues.html">Related: Issue #5</a>
+    </div>
+  </div>
+</article>
+<article class="qa-card" id="q5">
+  <h3>Who needs the other: The heart or the brain?</h3>
+  <div class="meta">Category: Human Anatomy</div>
+  <div class="answer">
+    <div class="short">February 2026 question, Issue 5!
+    </div>
+    <div class="qa-actions">
+      <a class="btn-link" href="issues.html">Related: Issue #5</a>
+    </div>
+  </div>
+</article>
+<article class="qa-card" id="q5">
+  <h3>What is the Dark Forest Hypothesis?</h3>
+  <div class="meta">Category: Cosmology and Hypothetical Space</div>
+  <div class="answer">
+    <div class="short">February 2026 question, Issue 5!
+    </div>
+    <div class="qa-actions">
+      <a class="btn-link" href="issues.html">Related: Issue #5</a>
+    </div>
+  </div>
+</article>
+<article class="qa-card" id="q5">
+  <h3>How do Dyson Spheres work?</h3>
+  <div class="meta">Category: Technology</div>
+  <div class="answer">
+    <div class="short">February 2026 question, Issue 5!
+    </div>
+    <div class="qa-actions">
+      <a class="btn-link" href="issues.html">Related: Issue #5</a>
+    </div>
+  </div>
+</article>
+<article class="qa-card" id="q5">
+  <h3>Why do we not know what dark matter is?</h3>
+  <div class="meta">Category: Astrophysics</div>
+  <div class="answer">
+    <div class="short">March 2026 question, Issue 6!
+    </div>
+    <div class="qa-actions">
+      <a class="btn-link" href="issues.html">Related: Issue #6</a>
+    </div>
+  </div>
+</article>
+<article class="qa-card" id="q5">
+  <h3>Why do we not know what dark matter is?</h3>
+  <div class="meta">Category: Astrophysics</div>
+  <div class="answer">
+    <div class="short">March 2026 question, Issue 6!
+    </div>
+    <div class="qa-actions">
+      <a class="btn-link" href="issues.html">Related: Issue #6</a>
+    </div>
+  </div>
+</article>
+<article class="qa-card" id="q5">
+  <h3>If bones are four times stronger than concrete, why do they break so easily?</h3>
+  <div class="meta">Category: Human Anatomy</div>
+  <div class="answer">
+    <div class="short">March 2026 question, Issue 6!
+    </div>
+    <div class="qa-actions">
+      <a class="btn-link" href="issues.html">Related: Issue #6</a>
+    </div>
+  </div>
+</article>
+<article class="qa-card" id="q5">
+  <h3>Why are some non-metals so strange?</h3>
+  <div class="meta">Category: Chemistry</div>
+  <div class="answer">
+    <div class="short">March 2026 question, Issue 6!
+    </div>
+    <div class="qa-actions">
+      <a class="btn-link" href="issues.html">Related: Issue #6</a>
+    </div>
+  </div>
+</article>
+<article class="qa-card" id="q5">
+  <h3>What If Your Brain Is Just Predicting Reality Instead of Seeing It?</h3>
+  <div class="meta">Category: Astrophysics</div>
+  <div class="answer">
+    <div class="short">March 2026 question, Issue 6!
+    </div>
+    <div class="qa-actions">
+      <a class="btn-link" href="issues.html">Related: Issue #6</a>
+    </div>
+  </div>
+</article>
 
 
-
-  </div> <!-- end .qa-grid -->
-</div> <!-- end .container -->
-  <footer>
-    <p>Contact us: <a href="mailto:ysjoiofficial@gmail.com">YSJOIofficial@gmail.com</a></p>
-    <p>© 2025 The Youth Science Journal of Iraq</p>
-    <p>© 2025 Satvik M. Bhure</p>
-  </footer>
-
-
+  </div> 
 
 
 
 
 
 <script>
-  // small toggle script for "Read more" buttons — unobtrusive
+
   document.querySelectorAll('.btn-link[data-toggle]').forEach(btn=>{
     btn.addEventListener('click', e=>{
       const id = btn.getAttribute('data-toggle');
@@ -430,9 +773,53 @@ header .site-logo img {
     });
   });
 
-  // initialize so the short answer shows
+
   document.querySelectorAll('.qa-card .full').forEach(f=> f.style.display='none');
   document.querySelectorAll('.qa-card .short').forEach(s=> s.style.display='block');
 </script>
+
+
+
+</div>
+
+
+
+<footer class="site-footer">
+
+  <div class="footer-container">
+
+
+    <div class="footer-column">
+      <h4>General Contact</h4>
+      <p>Email: <a href="mailto:ysjoiofficial@gmail.com">YSJOIofficial@gmail.com</a></p>
+    </div>
+
+
+    <div class="footer-column">
+      <h4>IT Team</h4>
+      <p>Email: <a href="mailto:ahmed.m26611.1113@gmail.com">Ahmed.M26611.1113@gmail.com</a></p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Questions Department</h4>
+      <p>Email: <a href="mailto:aliahmadkayanii2009@gmail.com">AliAhmadKayanii2009@gmail.com</a></p>
+    </div>
+
+
+    <div class="footer-column">
+      <h4>Editing Team</h4>
+      <p>Email: <a href="mailto:parwar66ph@gmail.com">Parwar66Ph@gmail.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 The Youth Science Journal of Iraq</p>
+    <p>© 2025 Satvik M. Bhure</p>
+  </div>
+
+</footer>
+
 </body>
+
 </html>

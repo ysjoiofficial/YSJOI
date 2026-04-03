@@ -1,188 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>YSJOI — Contributors</title>
-<link rel="icon" type="image/png" sizes="32x32" href="favions.png">
+<link rel="canonical" href="https://ysjoi.is-great.org/contributors.html">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-html {
-  scroll-behavior: smooth;
-}
-  :root{
-    --bg:#0A0A1A;
-    --panel:#1E1E3F;
-    --text:#FFFFFF;
-    --accent-b:#00FFFF;
-    --accent-p:#BF00FF;
-  }
 
-/* Logo on top-left of banner, not affected by overlay */
-header .site-logo {
+.goog-te-banner-frame.skiptranslate, 
+.goog-te-gadget-icon,
+iframe.skiptranslate {
+    display: none !important;
+}
+
+
+body {
+    top: 0px !important;
+}
+
+html { scroll-behavior: smooth; }
+
+:root{
+  --bg:#0A0A1A;
+  --panel:#151533;
+  --text:#FFFFFF;
+  --accent-blue:#00FFFF;
+  --accent-purple:#BF00FF;
+  --accent-red:#FF0055;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+
+header{
+  position:relative;
+  background:url('banner.png') center/cover no-repeat;
+  padding:70px 20px;
+  text-align:center;
+  box-shadow:inset 0 0 120px #000;
+}
+header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.1
+);
+}
+header h1,header p{
+  position:relative;
+  z-index:1;
+  font-family:'Orbitron',sans-serif;
+}
+header h1{
+  font-size:3.8rem;
+  color:var(--accent-purple);
+  margin-bottom:10px;
+}
+header p{color:#e9e9ff}
+
+
+.site-logo{
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:2;
+}
+.site-logo img{
+  height:180px;
+}
+
+
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+
+.section-title{
+  font-family:'Orbitron',sans-serif;
+  font-size:1.7rem;
+  margin-bottom:20px;
+  display:inline-block;
+  background:linear-gradient(90deg,var(--accent-purple),var(--accent-blue));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+  margin-bottom:60px;
+}
+
+
+.card{
+  padding:20px;
+  border-radius:16px;
+  display:flex;
+  gap:14px;
+  align-items:center;
+  transition:all .3s ease;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.core{
+  background:linear-gradient(145deg,#1d1d44,#14142d);
+  box-shadow:0 10px 30px rgba(191,0,255,0.15);
+}
+.core:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 40px rgba(191,0,255,0.35);
+}
+
+.questioner{
+  background:linear-gradient(145deg,#132c38,#101a2b);
+  box-shadow:0 10px 30px rgba(0,255,255,0.1);
+}
+.questioner:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 40px rgba(0,255,255,0.3);
+}
+
+.special{
+  background:linear-gradient(135deg,#2a003f,#001f33);
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 0 40px rgba(191,0,255,0.3);
+}
+.special:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 60px rgba(0,255,255,0.5);
+}
+
+.avatar{
+  width: flex;
+  height: 65px;
+  padding: 40px 10px 40px 10px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:22px;
+  background:linear-gradient(135deg,var(--accent-purple),var(--accent-blue));
+  color:#0b0b10;
+}
+
+.card h3{
+  margin:0;
+  font-family:'Orbitron',sans-serif;
+  color:var(--accent-blue);
+}
+.role{
+  font-size:0.85rem;
+  color:#bfc0e8;
+  margin:4px 0;
+}
+.card p{
+  margin:4px 0;
+  font-size:0.92rem;
+  color:#d7d7ee;
+}
+
+
+.site-footer{
+  background:#11101A;
+  padding:60px 20px;
+  text-align:center;
+  margin-top:40px;
+}
+.footer-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:50px;
+  margin-bottom:40px;
+}
+.footer-column h4{
+  font-family:'Orbitron',sans-serif;
+  color:var(--accent-blue);
+}
+.footer-column a{
+  color:var(--accent-blue);
+}
+.footer-column a:hover{
+  color:var(--accent-red);
+}
+.footer-bottom{
+  font-size:0.9rem;
+  opacity:0.8;
+}
+
+@media(max-width:520px){
+  header h1{font-size:2rem;}
+}
+.language-switcher {
   position: absolute;
-  left: 1px;
-  top: 1px;
-  z-index: 2;               /* higher than header::before which is z-index:0 */
-  display: block;
-  text-decoration: none;
-}
-
-/* logo image sizing and behavior */
-header .site-logo img {
-  display: block;
-  height: 128px;             /* adjust as needed */
-  width: auto;
-  object-fit: contain;
-  pointer-events: auto;
-  filter: none;             /* explicitly ensure no css filters are applied */
-}
-
-/* responsive: smaller logo on narrow screens */
-@media (max-width: 520px) {
-  header .site-logo {
-    left: 12px;
-    top: 12px;
-  }
-  header .site-logo img {
-    height: 48px;
-  }
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
 }
 
 
+.language-switcher button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+color: var(--color-black); 
 
-  *{box-sizing:border-box}
-  body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text)}
-  a{color:inherit}
-  header{
-    position:relative;background: url('banner.jpg') center center/cover no-repeat;padding:36px 20px;text-align:center;box-shadow: inset 0 0 100px #000;margin-bottom:20px;
-  }
-  header::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:0}
-  header h1,header p{position:relative;z-index:1;font-family:'Orbitron',sans-serif}
-  header h1{font-size:2.6rem;margin:0 0 6px;color:var(--accent-p)}
-  header p{margin:0;color:#e9e9ff}
-  .container{max-width:1100px;margin:0 auto;padding:40px 20px}
-  .back{display:inline-flex;gap:10px;align-items:center;background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:12px;color:#d7d7ee;margin-bottom:18px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
-  .contrib{
-    background:var(--panel);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.03);
-    display:flex;gap:12px;align-items:center;
-  }
-  .avatar{
-    width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent-p),var(--accent-b));display:flex;align-items:center;justify-content:center;font-size:26px;color:#0b0b10;font-weight:700;
-  }
-  .info h3{margin:0;font-family:'Orbitron',sans-serif;color:var(--accent-b);font-size:1.05rem}
-  .info p{margin:4px 0;color:#d7d7ee;font-size:0.95rem}
-  .role{font-size:0.88rem;color:#bfc0e8}
-  footer{padding:36px 20px;text-align:center;background:#0e0e1a;color:#bfbfdc;margin-top:40px}
-  @media(max-width:520px){header h1{font-size:1.8rem}}
+}
+
+.language-switcher img {
+  width: 20px;
+  height: 14px;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+
+body {
+  top: 0px !important;
+}
+
 </style>
 
-</head>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      includedLanguages: 'en,ar,ckb',
+      autoDisplay: false
+    },
+    'google_translate_element'
+  );
+}
+
+
+function setLanguage(lang) {
+  localStorage.setItem("siteLanguage", lang);
+  
+
+  let count = 0;
+  const checkInterval = setInterval(() => {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+      clearInterval(checkInterval);
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    }
+
+    if (count++ > 50) clearInterval(checkInterval); 
+  }, 100);
+}
+
+
+window.addEventListener("load", function () {
+  const savedLang = localStorage.getItem("siteLanguage");
+  if (savedLang && savedLang !== "en") {
+
+    setTimeout(() => setLanguage(savedLang), 1000);
+  }
+});
+</script>
+
 <body>
-  <header>
-  <a href="index.html" class="site-logo" aria-label="YSJOI Home">
-  <img src="favions.png" alt="YSJOI logo" />
+
+<header>
+  <a href="index.html" class="site-logo">
+    <img src="favions.png" alt="YSJOI logo">
   </a>
-    <h1>YSJOI — Contributors</h1>
-    <p>The students, writers, and mentors who made this issue possible</p>
-  </header>
+  <h1>YSJOI — Contributors</h1>
+  <p>The students, writers, and mentors who power this journal</p>
+<div class="language-switcher">
+  <button onclick="setLanguage('en')">
+    <img src="uk.png">  </button>
 
-  <div class="container">
-    <a class="back" href="index.html"><i class="fas fa-arrow-left"></i> Back to home</a>
+  <button onclick="setLanguage('ckb')">
+    <img src="kurdistan.png"> 
+  </button>
 
-    <div style="margin-top:10px;">
-      <div style="font-family:'Orbitron',sans-serif;color:var(--accent-p);font-size:1.5rem;margin-bottom:8px">Meet the team</div>
-      <div style="color:#d7d7ee;max-width:900px">Introducing out team! If you'd like to contribute, email us and we'll get you involved!</div>
-    </div>
+  <button onclick="setLanguage('ar')">
+    <img src="iraq.png"> 
+  </button>
+</div>
+</header>
+<div id="google_translate_element" style="display:none;"></div>
+<div class="container">
 
-    <div class="grid">
-      <div class="contrib">
-        <div class="avatar">SMB</div>
-        <div class="info">
-          <h3>Satvik M. Bhure</h3>
-          <div class="role">Founder & Editor</div>
-          <p>Founder of YSJOI — leads editorial direction and writes feature explainers.</p>
-        </div>
-      </div>
+  <div class="section-title">Core Team</div>
+  <div class="grid">
 
-      <div class="contrib">
-        <div class="avatar">OCT</div>
-        <div class="info">
-          <div class="role">October 2025 questioners!</div>
-          <h3>Maryam</h3>
-          <h3>Rozho Michael</h3>
-          <h3>Ismail Salah</h3>
-          <h3>Zakaria Ahmed</h3>
-          <h3>Sorashi B.</h3>
-        </div>
-      </div>
-
-<div class="contrib">
-        <div class="avatar">NOV</div>
-        <div class="info">
-          <div class="role">November 2025 questioners!</div>
-          <h3>Reber Rizgar</h3>
-          <h3>Ahmed Haitham</h3>
-          <h3>Ayaan Ahmed</h3>
-          <h3>Ali Ahmed</h3>
-          <h3>Parwar Phicri</h3>
-        </div>
-      </div>
-
-<div class="contrib">
-        <div class="avatar">DEC</div>
-        <div class="info">
-          <div class="role">Decemeber 2025 questioners!</div>
-          <h3>Govar Rizgar</h3>
-          <h3>Zheena Fikri</h3>
-          <h3>Yousif Abdullah</h3>
-          <h3>Arwan Ahmed</h3>
-          <h3>Rwar Rebin</h3>
-        </div>
-      </div>
-
-
-<div class="contrib">
-        <div class="avatar">JAN</div>
-        <div class="info">
-          <div class="role">January 2026 questioners!</div>
-          <h3>Melina Khalid</h3>
-          <h3>Rami Karwan</h3>
-          <h3>Alina Parwar</h3>
-          <h3>Muhammed Hemin</h3>
-          <h3>Ronya Huner</h3>
-        </div>
-      </div>
-
-
-
-
-
-
-      <!-- placeholder contributor -->
-      <div class="contrib">
-        <div class="avatar">YOU</div>
-        <div class="info">
-          <h3>You?</h3>
-          <div class="role">Contributor</div>
-          <p>Want your name here? Send us an article, experiment, or photo — we take all work from youth!</p>
-        </div>
+    <div class="card core">
+      <div class="avatar">SMB</div>
+      <div>
+        <h3 translate="no">Satvik M. Bhure</h3>
+        <div class="role">Founder & Editor</div>
+        <p>Leads editorial direction and writes feature explainers.</p>
       </div>
     </div>
 
-    <div style="margin-top:28px; padding:18px; background:linear-gradient(135deg, rgba(162,0,255,0.05), rgba(0,191,255,0.03)); border-radius:12px; border:1px solid rgba(255,255,255,0.03);">
-      <div style="font-weight:700;color:var(--accent-b);font-family:'Orbitron',sans-serif;margin-bottom:8px">Want to contribute?</div>
-      <div style="color:#d7d7ee">Email <a href="mailto:ysjoiofficial@gmail.com">ysjoiofficial@gmail.com</a> with a short pitch, your age, your name, and a sample of your work (Word/PDF/photo). We'll get back to you ASAP!</div>
+    <div class="card core">
+      <div class="avatar">AA</div>
+      <div>
+        <h3 translate="no">Ali Ahmed Kayani</h3>
+        <div class="role">Head of Questions</div>
+        <p>Seeks and verifies high-quality scientific questions.</p>
+      </div>
+    </div>
+
+    <div class="card core">
+      <div class="avatar">AM</div>
+      <div>
+        <h3 translate="no">Ahmed Mohammed</h3>
+        <div class="role">Head of IT & Editorial Contributor</div>
+        <p>Coding, article writing, and question coordination.</p>
+      </div>
+    </div>
+
+    <div class="card core">
+      <div class="avatar">PP</div>
+      <div>
+        <h3 translate="no">Parwar Phicri</h3>
+        <div class="role">Head of Editing</div>
+        <p>Verifies content and ensures research quality.</p>
+      </div>
+    </div>
+
+    <div class="card core">
+      <div class="avatar">HS</div>
+      <div>
+        <h3 translate="no">Hasar Salah</h3>
+        <div class="role">Editing Team</div>
+        <p>Editing and checking of research quality.</p>
+      </div>
+    </div>
+
+
+    <div class="card core">
+      <div class="avatar">AI</div>
+      <div>
+        <h3 translate="no">Asal Ibrahim</h3>
+        <div class="role">Editing Team</div>
+        <p>Editing and checking of research quality.</p>
+      </div>
+    </div>
+
+    <div class="card core">
+      <div class="avatar">SM</div>
+      <div>
+        <h3 translate="no">Syed Minhal</h3>
+        <div class="role">Editing Team</div>
+        <p>Editing and checking of research quality.</p>
+      </div> </div>
+    <div class="card core">
+      <div class="avatar">AH</div>
+      <div>
+        <h3 translate="no">Abdullah Haider</h3>
+        <div class="role">Journalism</div>
+        <p>Searching, solving and bringing new intel to YSJOI.</p>
+        </div>
+    </div>
+
+    <div class="card core">
+      <div class="avatar">YM</div>
+      <div>
+        <h3 translate="no">Yousif Muhammed</h3>
+        <div class="role">Youth Outreach</div>
+        <p>Brings fresh and young perspectives to YSJOI.</p>
+      </div>
+    </div>
+
+    <div class="card core">
+      <div class="avatar">SW</div>
+      <div>
+        <h3 translate="no">
+Safa Wisam</h3>
+        <div class="role">Editing Team</div>
+        <p>Editing and checking of research quality.</p>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <p>Contact us: <a href="mailto:ysjoiofficial@gmail.com">YSJOIofficial@gmail.com</a></p>
-    <p>© 2025 The Youth Science Journal of Iraq</p>
-    <p>© 2025 Satvik M. Bhure</p>
-  </footer>
+
+  <div class="section-title">Monthly Questioners</div>
+  <div class="grid">
+
+    <div class="card questioner">
+      <div class="avatar">OCT 2025</div>
+      <div>
+        <h3>October Questioners</h3>
+        <p translate="no">Maryam · Rozho Michael · Ismail Salah · Zakaria Ahmed · Sorashi B.</p>
+      </div>
+    </div>
+
+    <div class="card questioner">
+      <div class="avatar">NOV 2025</div>
+      <div>
+        <h3>November Questioners</h3>
+        <p translate="no">Reber Rizgar · Ahmed Haitham · Ayaan Ahmed · Ali Ahmed · Parwar Phicri</p>
+      </div>
+    </div>
+
+    <div class="card questioner">
+      <div class="avatar">DEC 2025</div>
+      <div>
+        <h3>December Questioners</h3>
+        <p translate="no">Govar Rizgar · Zheena Fikri · Yousif Abdullah · Arwan Ahmed · Rwar Rebin</p>
+      </div>
+    </div>
+    <div class="card questioner">
+      <div class="avatar"> Jan 2026</div>
+      <div>
+        <h3>January Questioners</h3>
+        <p translate="no">Melina Khalid · Rami Karwan · Alina Parwar · Muhammed Hemin · Ronya Huner</p>
+      </div>
+    </div>
+    <div class="card questioner">
+      <div class="avatar">Feb 2026</div>
+      <div>
+        <h3>February Questioners</h3>
+        <p translate="no">Rozho Michael · Wanya Ali · Ara Danyar · Tiwan Ahmed · Muhammed Raad</p>
+      </div>
+    </div>
+    <div class="card questioner">
+      <div class="avatar">March 2026</div>
+      <div>
+        <h3>March Questioners</h3>
+        <p translate="no">Satvika Satish · Auraka · Kamyar Muhammed · Danyar Mehrad · Noora Abdullah</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section-title">Future Contributor</div>
+  <div class="grid">
+
+    <div class="card special">
+      <div class="avatar">YOU</div>
+      <div>
+        <h3>You?</h3>
+        <div class="role">Next YSJOI Contributor</div>
+        <p>Send us an article, experiment, or idea — and see your name here next issue.</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h4>General Contact</h4>
+      <p><a href="mailto:ysjoiofficial@gmail.com">YSJOIofficial@gmail.com</a></p>
+    </div>
+
+    <div class="footer-column">
+      <h4>IT Team</h4>
+      <p><a href="mailto:ahmed.m26611.1113@gmail.com">Ahmed.M26611.1113@gmail.com</a></p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Questions Department</h4>
+      <p><a href="mailto:aliahmadkayanii2009@gmail.com">AliAhmadKayanii2009@gmail.com</a></p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Editing Team</h4>
+      <p><a href="mailto:parwar66ph@gmail.com">Parwar66Ph@gmail.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 The Youth Science Journal of Iraq<br>
+    © 2025 Satvik M. Bhure
+  </div>
+</footer>
+
 </body>
 </html>
+
+
