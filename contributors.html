@@ -30,6 +30,7 @@ html { scroll-behavior: smooth; }
   --accent-blue:#00FFFF;
   --accent-purple:#BF00FF;
   --accent-red:#FF0055;
+        --muted:#d7d7ee;
 }
 
 *{box-sizing:border-box}
@@ -69,15 +70,39 @@ header h1{
 header p{color:#e9e9ff}
 
 
-.site-logo{
-  position:absolute;
-  top:20px;
-  left:20px;
-  z-index:2;
+header .site-logo {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 2;              
+
+  display: block;
+  text-decoration: none;
 }
-.site-logo img{
-  height:180px;
+
+header .site-logo img {
+  display: block;
+  height: 175px;            
+  width: auto;
+  object-fit: contain;
+  pointer-events: auto;
+  filter: none;             
+
 }
+
+
+@media (max-width: 520px) {
+  header .site-logo {
+    left: 12px;
+    top: 12px;
+  }
+  header .site-logo img {
+    height: 48px;
+  }
+}
+
+
+
 
 
 .container{
@@ -213,6 +238,17 @@ header p{color:#e9e9ff}
   display: flex;
   gap: 8px;
 }
+  .back {
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.04);
+    padding:10px 14px;
+    border-radius:12px;
+    color:#d7d7ee;
+    margin-bottom:18px;
+}
 
 
 .language-switcher button {
@@ -242,6 +278,80 @@ color: var(--color-black);
 body {
   top: 0px !important;
 }
+
+
+.menu-trigger {
+  position: absolute;
+  top: 65px; /* Positioned right under the flag buttons */
+  right: 20px;
+  width: 140px; /* Matches the approximate width of 3 flag buttons */
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  color: var(--accent-color);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-trigger:hover {
+  background: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+.nav-overlay {
+  height: 100%;
+  width: 0; 
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0; /* Changed from left to right */
+  background-color: rgba(15, 15, 35, 0.95); 
+  backdrop-filter: blur(15px);
+  border-left: 1px solid var(--accent-color); /* Adds a sharp edge line */
+  overflow-x: hidden;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother "slide" feel */
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px; /* Space for the close button */
+}
+
+.nav-overlay a {
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1.2rem; /* Scaled down for the smaller width */
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  display: block;
+  white-space: nowrap; /* Prevents text wrapping while sliding */
+  transition: 0.2s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-overlay a:hover {
+  background: rgba(0, 255, 255, 0.1);
+  color: var(--accent-color);
+  padding-left: 40px; /* Subtle "nudge" effect on hover */
+}
+
+.close-menu {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* Moved to left of the drawer */
+  font-size: 2rem;
+  color: var(--accent-red);
+  cursor: pointer;
+}
+
+
 
 </style>
 
@@ -310,8 +420,13 @@ window.addEventListener("load", function () {
 </div>
 </header>
 <div id="google_translate_element" style="display:none;"></div>
-<div class="container">
 
+
+ 
+<div class="container">
+<a class="back" href="index.html">
+  <i class="fas fa-arrow-left" style="color:var(--muted)"></i> Back to home
+</a>
   <div class="section-title">Core Team</div>
   <div class="grid">
 
@@ -454,6 +569,14 @@ Safa Wisam</h3>
         <p translate="no">Satvika Satish · Auraka · Kamyar Muhammed · Danyar Mehrad · Noora Abdullah</p>
       </div>
     </div>
+    <div class="card questioner">
+      <div class="avatar">March 2026</div>
+      <div>
+        <h3>April Questioners</h3>
+        <p translate="no">STAFF EDITION! Safa Wissam · Ali Ahmed Kayani · Parwar Phicri · Yousif Muhammed · Ahmed Muhammed · Abdullah Haider</p>
+      </div>
+    </div>
+
   </div>
 
 

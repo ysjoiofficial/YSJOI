@@ -30,6 +30,43 @@ Iraq STEM education
 <link rel="icon" type="image/png" sizes="32x32" href="favions.png" >
 <style>
 
+* {
+    box-sizing: border-box !important;
+}
+
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important; /* Kills the wibble-wobble instantly */
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+img, video, iframe, div, section, header, footer {
+    max-width: 100% !important;
+}
+
+#visitor-popup, .intro-card, .ask-container, .hub-banner-card {
+    width: 92% !important; /* Leaves a tiny margin so it doesn't touch the edges */
+    max-width: 350px !important; /* Keeps it professional on desktop */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+header {
+    width: 100vw !important;
+    left: 0 !important;
+}
+
+.nav-overlay {
+    max-width: 80% !important; /* Ensures it never covers 100% of the screen */
+}
+
+
+
 .goog-te-banner-frame.skiptranslate, 
 .goog-te-gadget-icon,
 iframe.skiptranslate {
@@ -739,7 +776,7 @@ header .site-logo img {
 .delay-3 { animation-delay: 0.6s; }
 .delay-4 { animation-delay: 0.8s; }
 .delay-5 { animation-delay: 1s; }
-
+.delay-6 { animation-delay: 1.8s; }
 
 @media (max-width: 1000px) {
   .qa-top-row {
@@ -815,6 +852,160 @@ body {
 .goog-te-gadget {
   display: none !important;
 }
+
+.hub-link-section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hub-banner-card {
+    background: linear-gradient(135deg, #1E1E3F 0%, #0A0A1A 100%);
+    border: 1px solid var(--accent-color);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: 0.4s ease;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+    text-decoration: none;
+}
+
+.hub-banner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+    border-color: var(--accent-color1);
+}
+
+.hub-icon-box {
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 255, 255, 0.05);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.hub-icon-box i {
+    font-size: 3rem;
+    color: var(--accent-color);
+}
+
+.hub-text-content {
+    flex-grow: 1;
+}
+
+.hub-text-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+}
+
+.hub-text-content p {
+    font-size: 1.1rem;
+    color: #d7d7ee;
+    margin: 0;
+}
+
+.hub-arrow {
+    font-size: 2rem;
+    color: var(--accent-color1);
+    animation: bounceRight 2s infinite;
+}
+
+@keyframes bounceRight {
+    0%, 20%, 50%, 80%, 100% {transform: translateX(0);}
+    40% {transform: translateX(-10px);}
+    60% {transform: translateX(-5px);}
+}
+
+@media (max-width: 768px) {
+    .hub-banner-card { flex-direction: column; text-align: center; }
+    .hub-arrow { display: none; }
+}
+
+
+.menu-trigger {
+  position: absolute;
+  top: 65px; /* Positioned right under the flag buttons */
+  right: 20px;
+  width: 140px; /* Matches the approximate width of 3 flag buttons */
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  color: var(--accent-color);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-trigger:hover {
+  background: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+.nav-overlay {
+  height: 100%;
+  width: 0; 
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0; /* Changed from left to right */
+  background-color: rgba(15, 15, 35, 0.95); 
+  backdrop-filter: blur(15px);
+  border-left: 1px solid var(--accent-color); /* Adds a sharp edge line */
+  overflow-x: hidden;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother "slide" feel */
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px; /* Space for the close button */
+}
+
+.nav-overlay a {
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1.2rem; /* Scaled down for the smaller width */
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  display: block;
+  white-space: nowrap; /* Prevents text wrapping while sliding */
+  transition: 0.2s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-overlay a:hover {
+  background: rgba(0, 255, 255, 0.1);
+  color: var(--accent-color);
+  padding-left: 40px; /* Subtle "nudge" effect on hover */
+}
+
+.close-menu {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* Moved to left of the drawer */
+  font-size: 2rem;
+  color: var(--accent-red);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
 </style>
 
 
@@ -942,16 +1133,52 @@ window.addEventListener("load", function () {
     <img src="iraq.png"> 
   </button>
 </div>
+<div id="myNav" class="nav-overlay">
+  <span class="close-menu" onclick="closeNav()">&times;</span>
+  <a href="index.html" onclick="closeNav()">HOME</a>
+  <a href="issues.html" onclick="closeNav()">ISSUES</a>
+  <a href="questions.html" onclick="closeNav()">QUESTION HUB</a>
+  <a href="contributors.html" onclick="closeNav()">CONTRIBUTORS</a>
+  <a href="credits.html" onclick="closeNav()">SOLVED QUESTIONS</a>
+</div>
+
+
+<button class="menu-trigger" onclick="openNav()">
+  MENU <i class="fas fa-bars"></i>
+</button>
+
 </header>
+
+<script>
+function openNav() {
+  if (window.innerWidth > 768) {
+    document.getElementById("myNav").style.width = "300px"; 
+  } else {
+    document.getElementById("myNav").style.width = "75%";
+  }
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0";
+}
+
+window.onclick = function(event) {
+  let modal = document.getElementById("myNav");
+  if (event.target == modal) {
+    closeNav();
+  }
+}
+</script>
+
 <div id="google_translate_element" style="display:none;"></div>
 <div class="breaking-news">
 
   <div class="ticker-wrapper">
     <div class="ticker">
-      <span>YSJOI Issue #6 is out! The March 2026 Issue is out! &nbsp;&nbsp;&nbsp;</span>
-      <span>YSJOI Issue #6 is out! The March 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
-<span>YSJOI Issue #6 is out! The March 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
-<span>YSJOI Issue #6 is out! The March 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
+      <span>YSJOI Issue #7 is out! The April 2026 Issue is out! &nbsp;&nbsp;&nbsp;</span>
+      <span>YSJOI Issue #7 is out! The April 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
+<span>YSJOI Issue #7 is out! The April 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
+<span>YSJOI Issue #7 is out! The April 2026 Issue is out!  &nbsp;&nbsp;&nbsp;</span>
     </div>
   </div>
 </div>
@@ -1128,40 +1355,38 @@ The Youth Science Journal of Iraq (YSJOI) is an Iraqi youth-led science journal 
 <section class="qa-unified-container">
 
 
-  <div class="qa-top-row">
-    <div class="qa-small-box ask-box">
-      <h3>Ask a Question</h3>
-      <ul>
-        <li><a href="mailto:ysjoiofficial@gmail.com">Email Us</a></li>
-        <li><a href="https://docs.google.com/forms/d/1aWwFD6FUFgioWU9o9K8loqW0NX56UYJSfG2M6GBMuxs" target="_blank">Submit via Google Form</a></li>
-        <li><a href="https://instagram.com/ysjoi_official" target="_blank">Message on Instagram</a></li>
-      </ul>
+<section class="hub-link-section">
+  <a href="questions.html" class="hub-banner-card">
+    <div class="hub-icon-box">
+      <i class="fas fa-microscope"></i>
     </div>
-
-    <div class="qa-small-box answer-box">
-      <h3>Answer Questions</h3>
-      <ul>
-        <li><a href="mailto:ysjoiofficial@gmail.com">Email Us</a></li>
-      </ul>
-      <p>Attach your work as a Word file with your name included!</p>
+    <div class="hub-text-content">
+      <h2>The Question Hub</h2>
+      <p>Got a scientific mystery or a brilliant explanation? Use our central portal to submit inquiries, offer solutions, and claim your place in the next issue of YSJOI.</p>
     </div>
-  </div>
+    <div class="hub-arrow">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </a>
+</section>
 
 
-  <h2 class="qa-section-title">March 2026: This Month's Questions</h2>
+  <h2 class="qa-section-title">April 2026: This Month's Questions</h2>
 
 
   <ul class="qa-questions-grid">
-    <li class="qa-question-item delay-1">🕰️ Why do we not know what dark matter is?
+    <li class="qa-question-item delay-1">🕰️ What is the best heat conductor?
+
 </li>
-    <li class="qa-question-item delay-2">🌌 Why are some non-metals so strange?
+    <li class="qa-question-item delay-2">🌌 What is the universe fated to be? 
 </li>
-    <li class="qa-question-item delay-3">🪶 How do planes stay in the air?
+    <li class="qa-question-item delay-3">🪶What would happen if the sun disappeared?
 </li></ul>
    <ul class="qa-questions-grid">
-    <li class="qa-question-item delay-4"> If bones are four times as strong as concrete, why do they break so easily?
+    <li class="qa-question-item delay-4">🧠 How does the brain dream of things it has never experienced?
 </li>
-    <li class="qa-question-item delay-5">What If Your Brain Is Just Predicting Reality Instead of Seeing It?</li>  </ul>
+    <li class="qa-question-item delay-5">🚀 How do black holes work?</li> 
+  <li class="qa-question-item delay-6">🌕 Why is the moon’s density so low?</li>  </ul>
 
 </section>
 

@@ -56,9 +56,41 @@ body {
       content:"";
       position:absolute;inset:0;background:rgba(0,0,0,0.1);z-index:0;
     }
-    header.page-header .logo{
-      position:absolute;left:4px;top:4px;z-index:3;display:block;
-    }
+
+header .site-logo {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 2;              
+
+  display: block;
+  text-decoration: none;
+}
+
+header .site-logo img {
+  display: block;
+  height: 175px;            
+  width: auto;
+  object-fit: contain;
+  pointer-events: auto;
+  filter: none;             
+
+}
+
+
+@media (max-width: 520px) {
+  header .site-logo {
+    left: 12px;
+    top: 12px;
+  }
+  header .site-logo img {
+    height: 48px;
+  }
+}
+
+
+
+
     header.page-header h1, header.page-header p { position:relative; z-index:1; margin:0; font-family:'Orbitron',sans-serif; }
     header.page-header h1{font-size:2.6rem; letter-spacing:0.6px}
     header.page-header p{font-size:1.05rem; opacity:0.95; margin-top:8px}
@@ -232,6 +264,81 @@ body {
 .goog-te-gadget {
   display: none !important;
 }
+
+
+.menu-trigger {
+  position: absolute;
+  top: 65px; /* Positioned right under the flag buttons */
+  right: 20px;
+  width: 140px; /* Matches the approximate width of 3 flag buttons */
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  color: var(--accent-color);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-trigger:hover {
+  background: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+.nav-overlay {
+  height: 100%;
+  width: 0; 
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0; /* Changed from left to right */
+  background-color: rgba(15, 15, 35, 0.95); 
+  backdrop-filter: blur(15px);
+  border-left: 1px solid var(--accent-color); /* Adds a sharp edge line */
+  overflow-x: hidden;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother "slide" feel */
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px; /* Space for the close button */
+}
+
+.nav-overlay a {
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1.2rem; /* Scaled down for the smaller width */
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  display: block;
+  white-space: nowrap; /* Prevents text wrapping while sliding */
+  transition: 0.2s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-overlay a:hover {
+  background: rgba(0, 255, 255, 0.1);
+  color: var(--accent-color);
+  padding-left: 40px; /* Subtle "nudge" effect on hover */
+}
+
+.close-menu {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* Moved to left of the drawer */
+  font-size: 2rem;
+  color: var(--accent-red);
+  cursor: pointer;
+}
+
+
+
   </style>
 
 
@@ -291,13 +398,11 @@ window.addEventListener("load", function () {
 });</script>
 
 <body>
-    <header class="page-header" role="banner" aria-label="YSJOI header">
-
-
-      <a class="logo" href="index.html" aria-label="YSJOI home">
-        <img src="logo.png" alt="YSJOI logo" style="height:225px; width:auto; display:block; filter:none;">
-      </a>
-<p> &nbsp</p><p> 
+<header class="page-header" role="banner" aria-label="YSJOI header">
+  <!-- Changed class to site-logo to match your CSS -->
+  <a class="site-logo" href="index.html" aria-label="YSJOI home">
+    <img src="logo.png" alt="YSJOI logo">
+  </a><p> &nbsp</p>
       <h1>YSJOI — Issues</h1>
       <p>Browse every published issue. Click Read Online to open the web version or Download to grab the PDF.</p>
 <p> &nbsp</p>
@@ -315,8 +420,43 @@ window.addEventListener("load", function () {
   </button>
 </div>
 
+<div id="myNav" class="nav-overlay">
+  <span class="close-menu" onclick="closeNav()">&times;</span>
+  <a href="index.html" onclick="closeNav()">HOME</a>
+  <a href="issues.html" onclick="closeNav()">ISSUES</a>
+  <a href="questions.html" onclick="closeNav()">QUESTION HUB</a>
+  <a href="contributors.html" onclick="closeNav()">CONTRIBUTORS</a>
+  <a href="credits.html" onclick="closeNav()">SOLVED QUESTIONS</a>
+</div>
 
-    </header>
+
+<button class="menu-trigger" onclick="openNav()">
+  MENU <i class="fas fa-bars"></i>
+</button>
+
+</header>
+
+<script>
+function openNav() {
+  if (window.innerWidth > 768) {
+    document.getElementById("myNav").style.width = "300px"; 
+  } else {
+    document.getElementById("myNav").style.width = "75%";
+  }
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0";
+}
+
+window.onclick = function(event) {
+  let modal = document.getElementById("myNav");
+  if (event.target == modal) {
+    closeNav();
+  }
+}
+</script>
+
 <div id="google_translate_element" style="display:none;"></div>
   <div class="container">
 
@@ -506,6 +646,32 @@ window.addEventListener("load", function () {
       </article>
 
 
+      <article class="issue-card" role="listitem" aria-labelledby="issue2-title">
+        <div class="cover">
+          <img src="covers/acover7.png" alt="Issue 7 cover — rockets">
+        </div>
+
+        <div class="details">
+          <div>
+            <div class="meta-row">
+              <div class="issue-number">Issue #7</div>
+              <div class="pill">April 2026</div>
+              <div class="issue-date">Published: April 30, 2026</div>
+            </div>
+
+            <div class="issue-title" id="issue2-title">YSJOI Issue #7 — Staff and April Fools!</div>
+
+            <div class="issue-blurb">
+              A staff edition combined with an april fools edition - can you complete the challenge?
+            </div>
+          </div>
+
+          <div class="issue-actions" aria-hidden="false">
+            <a class="btn" href="issues/YSJOI 7.pdf" aria-label="Read Issue 7 online"><i class="fas fa-book-open"></i> Read Online</a>
+            <a class="btn secondary" href="issues/YSJOI 7.pdf" download="issues/YSJOI 7.pdf" aria-label="Download Issue 7 PDF"><i class="fas fa-file-download"></i> Download PDF</a>
+          </div>
+        </div>
+      </article>
 
 
 
@@ -522,12 +688,12 @@ window.addEventListener("load", function () {
         <div class="details">
           <div>
             <div class="meta-row">
-              <div class="issue-number">Issue #7</div>
+              <div class="issue-number">Issue #8</div>
               <div class="pill">COMING SOON</div>
               <div class="issue-date">COMING SOON</div>
             </div>
 
-            <div class="issue-title" id="issue2-title">YSJOI Issue #7 — SECRETS!</div>
+            <div class="issue-title" id="issue2-title">YSJOI Issue #8 — SECRETS!</div>
 
             <div class="issue-blurb">
              Coming soon!
