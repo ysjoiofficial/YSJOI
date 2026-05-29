@@ -268,9 +268,9 @@ body {
 
 .menu-trigger {
   position: absolute;
-  top: 65px; /* Positioned right under the flag buttons */
+  top: 65px; 
   right: 20px;
-  width: 140px; /* Matches the approximate width of 3 flag buttons */
+  width: 140px; 
   padding: 8px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--accent-color);
@@ -299,25 +299,25 @@ body {
   position: fixed;
   z-index: 1000;
   top: 0;
-  right: 0; /* Changed from left to right */
+  right: 0; 
   background-color: rgba(15, 15, 35, 0.95); 
   backdrop-filter: blur(15px);
-  border-left: 1px solid var(--accent-color); /* Adds a sharp edge line */
+  border-left: 1px solid var(--accent-color); 
   overflow-x: hidden;
-  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother "slide" feel */
-  display: flex;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+   display: flex;
   flex-direction: column;
-  padding-top: 80px; /* Space for the close button */
+  padding-top: 80px;
 }
 
 .nav-overlay a {
   padding: 15px 30px;
   text-decoration: none;
-  font-size: 1.2rem; /* Scaled down for the smaller width */
+  font-size: 1.2rem; 
   font-family: 'Orbitron', sans-serif;
   color: #fff;
   display: block;
-  white-space: nowrap; /* Prevents text wrapping while sliding */
+  white-space: nowrap; 
   transition: 0.2s;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -325,18 +325,17 @@ body {
 .nav-overlay a:hover {
   background: rgba(0, 255, 255, 0.1);
   color: var(--accent-color);
-  padding-left: 40px; /* Subtle "nudge" effect on hover */
+  padding-left: 40px; 
 }
 
 .close-menu {
   position: absolute;
   top: 20px;
-  left: 20px; /* Moved to left of the drawer */
+  left: 20px; 
   font-size: 2rem;
   color: var(--accent-red);
   cursor: pointer;
 }
-
 
 
   </style>
@@ -674,7 +673,32 @@ window.onclick = function(event) {
       </article>
 
 
+      <article class="issue-card" role="listitem" aria-labelledby="issue2-title">
+        <div class="cover">
+          <img src="covers/acover8.png" alt="Issue 8 cover">
+        </div>
 
+        <div class="details">
+          <div>
+            <div class="meta-row">
+              <div class="issue-number">Issue #8</div>
+              <div class="pill">May 2026</div>
+              <div class="issue-date">Published: May 29, 2026</div>
+            </div>
+
+            <div class="issue-title" id="issue2-title">YSJOI Issue #8 — First Photo Feature!</div>
+
+            <div class="issue-blurb">
+              Our first photo feature, the answer to last month's challenge, and 5 brand new articles!
+            </div>
+          </div>
+
+          <div class="issue-actions" aria-hidden="false">
+            <a class="btn" href="issues/YSJOI 8.pdf" aria-label="Read Issue 8 online"><i class="fas fa-book-open"></i> Read Online</a>
+            <a class="btn secondary" href="issues/YSJOI 8.pdf" download="issues/YSJOI 8.pdf" aria-label="Download Issue 8 PDF"><i class="fas fa-file-download"></i> Download PDF</a>
+          </div>
+        </div>
+      </article>
 
 
 
@@ -688,12 +712,12 @@ window.onclick = function(event) {
         <div class="details">
           <div>
             <div class="meta-row">
-              <div class="issue-number">Issue #8</div>
+              <div class="issue-number">Issue #9</div>
               <div class="pill">COMING SOON</div>
               <div class="issue-date">COMING SOON</div>
             </div>
 
-            <div class="issue-title" id="issue2-title">YSJOI Issue #8 — SECRETS!</div>
+            <div class="issue-title" id="issue2-title">YSJOI Issue #9 — SECRETS!</div>
 
             <div class="issue-blurb">
              Coming soon!
