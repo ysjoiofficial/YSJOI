@@ -102,14 +102,20 @@ header .site-logo img {
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit;text-decoration:none}
-  header{
-    position:relative;
-    background: url('banner1.png') center center / cover no-repeat;
-    padding:36px 20px;
-    text-align:center;
-    box-shadow: inset 0 0 100px #000;
-    margin-bottom:20px;
+header {
+  position: relative;
+  background: url('banner1.png') center center / cover no-repeat !important;
+  padding: 36px 20px;
+  text-align: center;
+  box-shadow: inset 0 0 100px #000;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  header {
+    background: url('mobilebanner.png') center center / cover no-repeat !important;
   }
+}
 
 .site-footer {
   background-color: #11101A;
@@ -383,6 +389,34 @@ img, .intro-card, .ask-container, .hub-banner-card {
   font-size: 2rem;
   color: var(--accent-red);
   cursor: pointer;
+}
+
+@media (max-width: 520px) {
+  .menu-trigger {
+    position: absolute !important;
+    top: 50px !important;
+    right: 15px !important;
+    width: auto !important;
+    padding: 6px 10px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  header {
+    padding: 80px 15px 30px 15px !important;
+  }
+  
+  header h1 {
+    font-size: 2rem !important; 
+    margin-top: 10px;
+  }
+
+  header h2 {
+    font-size: 1.2rem !important;
+  }
+
+  header p {
+    font-size: 1rem !important;
+  }
 }
 
 
